@@ -1,0 +1,53 @@
+.add-to-cart-btn{
+    /* background-color:#2d3a4b!important;
+    color: #ffff;
+    border-radius:none;
+    width: 100%; */
+    padding: 20px 40px!important;
+    margin-top: 30px!important;
+    background-color:  #ffe115!important;
+    color:#2d3a4b!important;
+    border-radius: 5px!important;
+    cursor: pointer!important;
+    border: none!important;
+    transition: all 0.3s ease-in!important;
+    font-family: Poppins!important;
+}
+.add-to-cart-btn:hover {
+    /* background-color:#ffe115!important; */
+    background-color:#2d3a4b!important;
+    color: #ffe115!important;  
+}
+
+.arrival-block .overlay {
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+.about-us-con h3 {
+    margin-bottom: 20px;
+}
+p {
+    font-weight: 400;
+    color: #6f6f6f;
+    line-height: 26px;
+    text-rendering: optimizeLegibility;
+}
+.about-us-con h6:before {
+    content: "";
+    height: 2px;
+    width: 30px;
+    position: absolute;
+    left: -50px;
+    top: 10px;
+    background: #2d3a4b;
+}

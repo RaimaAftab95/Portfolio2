@@ -1,0 +1,101 @@
+.carousel {
+    margin: 0;
+    padding: 0;
+  }
+  .carousel-img{
+    max-width:600px!important;
+    max-height: 400px!important;
+    object-fit: contain;
+  }
+  .carousel-text {
+    position: absolute;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    width: 100%;
+  }
+  .simple-head {
+    position: relative;
+    min-height: 800px;
+}
+  .text-left1 {
+    left: 20px!important; /* Adjust left positioning as needed */
+  }
+  .text-left {
+    left: 20px; /* Adjust left positioning as needed */
+     /* top: 50%;  */
+     top:10%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+  
+  .text-right {
+    right: 20px!important;
+    top: 50%; /* Adjust right positioning as needed */
+  }
+  
+  .text-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* .simple-head {
+    position: relative;
+    min-height: 800px;
+    background: #f1eff4 url(/BOSHOP images/slide-bg-1.png) bottom right no-repeat;
+} */
+@media (max-width: 1600px) {
+    .simple-head .extra-huge-text {
+      font-size: 20px;
+      /* 100 */
+      /* line-height: 80px; */
+    }
+  }
+  
+  .simple-head .extra-huge-text {
+    /* 142 */
+    font-size:100px;
+    /* line-height: 50px; */
+    font-weight: bold;
+    color: #2d3a4b;
+    letter-spacing: -2px;
+    position: relative;
+  }
+  .btn {
+    border: none;
+    color: #fff;
+    display: inline-block;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 0px;
+    font-family: 'Poppins', sans-serif;
+    background: #2d3a4b;
+    position: relative;
+    z-index: 1;
+}
+.btn-inverse {
+    background: #ffe115!important;
+    color: #2d3a4b!important;
+}
+ .margin-top-40 {
+    margin-top:10px!important;
+}
+/* change */
+.simple-head .extra-huge-text {
+    font-size: 100px;
+    line-height: 80px;
+}
+
+@media (max-width: 1600px) {
+    .simple-head .extra-huge-text {
+        font-size: 20px;
+        line-height: 24px; /* Adjust line height as needed */
+    }
+}
+/* @media (max-width: 767px){
+.simple-head {
+    background: #f1eff4;
+    min-height: initial;
+    padding: 100px 0;
+}
+} */
