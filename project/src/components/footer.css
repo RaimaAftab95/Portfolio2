@@ -2,6 +2,7 @@
 footer {
     background-color:#2d3a4b;
     position: relative;
+    margin-top: auto!important;
   }
   .footer-text {
     color: #d8dadf;
@@ -69,3 +70,24 @@ footer {
   {
     color: #fff;
   }
+  /* stick footer to bottom */
+   /* .sticky-footer{
+   position: sticky!important;
+   top:100%!important; 
+  }  */
+
+  /* .sticky-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+   
+  } */
+  /* .sticky-footer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+  
+  .footer-content {
+    flex: 1; 
+  } */

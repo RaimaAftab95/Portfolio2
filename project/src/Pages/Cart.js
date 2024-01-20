@@ -21,6 +21,7 @@ import { PRODUCTS } from "../components/data";
 import { removeFromCart, emptyCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import "./Cart.css";
 
 export default function Cart() {
   // use hook useParams to get url id as param it may have more than one param
@@ -51,7 +52,7 @@ export default function Cart() {
   // };
 
   return (
-    <Container fluid>
+    <Container fluid className="Cart">
       <Modal isOpen={modalOpen} toggle={() => setModalOpen(false)}>
         <ModalHeader toggle={() => setModalOpen(false)}>
           Modal title

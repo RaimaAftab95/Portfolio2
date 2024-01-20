@@ -51,6 +51,15 @@ export default function ProductDetail() {
     console.log("addto cart func");
     dispatch(addToCart({ ...product, quantity }));
   };
+
+  const  DecQuantity= () =>{
+    console.log("Dec quantity");
+  };
+  const AddQuantity = () =>{
+    console.log("add quantity");
+  };
+ 
+
   return (
     <Container>
       <h3 className="text-center mt-3 mb-4">Product Details</h3>
@@ -76,9 +85,9 @@ export default function ProductDetail() {
               </CardSubtitle>
               <CardText>{product.description}</CardText>
               <ButtonGroup>
-                <Button>-</Button>
+                <Button onClick={DecQuantity}>-</Button>
                 <Button disabled>{quantity}</Button>
-                <Button> +</Button>
+                <Button onClick={AddQuantity}> +</Button>
               </ButtonGroup>
               <br></br>
               {/*due to global state dont need to pass  (product) below */}

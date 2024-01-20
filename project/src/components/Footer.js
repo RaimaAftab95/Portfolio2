@@ -6,7 +6,9 @@ import ScrollToTop from "./ScrollToTop";
 function Footer() {
   return (
     <div>
-      <footer>
+      {/* <div className="sticky-footer">
+      <div className="footer-content"> */}
+      <footer className="mt-5">
         <Container fluid>
           <Container className="pt-5 pb-5">
             <Row className="justify-content-center pt-5 pb-5">
@@ -99,20 +101,26 @@ function Footer() {
                 </Col>
               </Row>
               <Row>
-      <Col md={6}>
-        <p className="copyright footer-text">© 2024 BoShop All right reserved. <a   className="codefooter" href="https://webicode.com/">webicode</a></p>
-      </Col>
-      <Col md={6} className="text-right">
-        <img src="/BOSHOP images/card-icon.png" alt="" />
-      </Col>
-    </Row>
-              
+                <Col md={6}>
+                  <p className="copyright footer-text">
+                    © 2024 BoShop All right reserved.{" "}
+                    <a className="codefooter" href="https://webicode.com/">
+                      webicode
+                    </a>
+                  </p>
+                </Col>
+                <Col md={6} className="text-right">
+                  <img src="/BOSHOP images/card-icon.png" alt="" />
+                </Col>
+              </Row>
             </div>
           </Container>
           <ScrollToTop />
         </Container>
       </footer>
     </div>
+    // </div>
+    // </div>
   );
 }
 

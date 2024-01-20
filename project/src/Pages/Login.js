@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setActiveUser } from "./redux/user";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 export function Login({ name = "n/a", place, dob }) {
   const navigate = useNavigate();
@@ -13,7 +14,8 @@ export function Login({ name = "n/a", place, dob }) {
   };
 
   return (
-    <div>
+    //  style={{ marginTop: '100px' }}
+    <div className="Login">
       {/* <h4>Name:{name}</h4>
       {dob ? <h4>DOB:{dob}</h4> : <p>DOB is na</p>}
       <h4>Place: {place}</h4> */}

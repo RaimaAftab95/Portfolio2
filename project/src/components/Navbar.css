@@ -4,6 +4,11 @@
 .hide-on-lg {
     display: none;
 }
+.logo-img{
+  margin-top:5px;
+  position: relative;
+  float:left;
+}
 .nav-bg-color {
     background-color: white!important;
     position: fixed!important;
@@ -16,10 +21,12 @@
 .text-color{
   color: #212529;
   text-decoration: none!important;
-  padding-top: 100px!important;
+  margin-right: 30px;
+  margin-top: 10px; 
+  /* padding-top: 100px!important;
   margin-top: 20px!important;
   margin-right: 90px;
-  text-align: left!important;
+  text-align: left!important; */
 }
 
   /* Add a media query to show the hamburger icon on small screens */
@@ -28,78 +35,25 @@
       display: block;
     }
   }
-  /* Customize styles for the Hamburger bars */
   .hamburger-react div {
-    /* Your custom styles for the bars go here */
-    background-color: #2d3a4b;; /* Example color */
+    background-color: #2d3a4b;; 
   }
-  /* Navbar.css */
-
-/* Customize styles for the Hamburger component */
 .hamburger-react {
-    /* Your custom styles go here */
     padding: 10px;
-    border: 2px solid #2d3a4b;; /* Example border color */
-    border-radius: 4px; /* Example border radius */
+    border: 2px solid #2d3a4b;; 
+    border-radius: 4px;
   }
   
-   /* .navbar-text {
-    font-size: 14px;
-    border-bottom:red 5px!important;
-    font-weight: 500;
-    padding: 10px 0px;
-    float: left;
-    color: #212529;
-    margin: 0 10px;
-    position: relative;
-    letter-spacing: 0px;
-    text-transform: uppercase;
-}
-.navbar-text:hover {
-  border-bottom:red 5px!important;
-  padding-bottom: 5px;
-  color: yellow!important;
-}
-
-.nav-icon{
-  color: #212529;
-  font-size: 30px;
-}
-.navbar li {
-  position: relative;
-} */
-
-/* .navbar li a:before {
-  width: 0;
-  margin: 0 auto;
-  position: absolute;
-  content: '';
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  background: #ffe115;
-  transition: 0.2s ease-in-out;
-}
-
-.navbar li:hover a:before,
-.navbar li.active a:before {
-  width: 100%;
-}
-
-header .navbar li:hover a:before,
-header .navbar li.active a:before {
-  width: 100%;
-} */
+  
 /* navlink hover line */
 .nav_link{
+  /* margin-top: 5px;
+  float: right; */
+text-align: center!important;
 color:#2d3a4b;
 font-size: 14px;
 position: relative;
 transition: all 0.4s;
-}
-.nav_link:hover{
-  color: rebeccapurple;
 }
 .nav_link::after {
   content:'';
@@ -122,15 +76,14 @@ transition: all 0.4s;
 @media (max-width: 767px) {
   .nav_link {
     margin-right: 10px;
-    margin-top: 10px; /* Adjust this value to increase or decrease the gap between links on small screens */
+    margin-top: 10px; 
   }
   /* .navbar-brand {
     text-align: center; 
     width: 100%; 
   } */
-  .logo-img {
-    display: block!important;
-    margin: 0 auto!important;
-    /* Adjust any additional styles as needed */
-  }
+  /* .logo-img {
+   display: block!important;
+  margin: 0 auto!important;
+  } */
 }
