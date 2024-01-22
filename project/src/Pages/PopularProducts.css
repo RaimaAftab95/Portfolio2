@@ -1,0 +1,10 @@
+.PopularProducts-bg
+{
+    background-color:#2d3a4b!important;
+}
+.card-border{
+    border:5px solid #111822!important;
+}
+.card-border:hover{
+    border:8px solid black!important;
+}

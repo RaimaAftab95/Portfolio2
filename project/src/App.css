@@ -8,3 +8,10 @@ flex-direction: column;
 .slick-slide > div {
     margin: 0 10px;
 }
+
+/* .slick-slide > .card-border{
+    border:10px solid #2d3a4b!important;
+}
+.slick-slide > .card-border {
+    border:10px solid #2d3a4b!important;
+} */

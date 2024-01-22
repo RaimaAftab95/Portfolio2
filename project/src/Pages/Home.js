@@ -17,14 +17,11 @@ import { addToCart } from "./redux/cart";
 import { PRODUCTS } from "../components/data";
 import Carosal from "../components/Carosal";
 import Carosal2 from "../components/Carosal2";
-// import Slider from "../components/Slider";
 import Slider from "../components/Slider";
-//import { slidesData } from "../components/slidesData";
 import { slidesData } from "../components/data";
 import "../components/Slider.css";
 import "./Home.css";
-// import ProductSlider from "../Components/ProductSlider";
-// import PopularProducts from "./PopularProducts";
+import "./PopularProducts.css";
 import PopularProducts from "./PopularProducts";
 
 export default function Home() {
@@ -55,15 +52,10 @@ export default function Home() {
   };
 
   return (
+
     // instead of div we wrap in container
     <Container fluid>
-      <div className="p-5 m-5 bg-dark"> 
-        <PopularProducts />
-        </div>
-        
-      {/* <Carosal2 /> */}
-      <Carosal className="m-5" />
-      {/* <Slider slides={Slider} />  */}
+     
       <Slider slides={slidesData} />
       <div className="mt-5 mb-5">
         <h4>Best Collection Arrived</h4>
@@ -200,6 +192,12 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
+
+      <div className="p-5 m-5 PopularProducts-bg">
+        <PopularProducts />
+      </div>
+
+      <Carosal className="m-5" />
     </Container>
   );
 }

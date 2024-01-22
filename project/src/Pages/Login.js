@@ -54,7 +54,7 @@
 //   );
 // }
 
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import {  Container, Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import { setActiveUser } from './redux/user';
 import { useState } from 'react';
@@ -71,8 +71,8 @@ export function Login({ name = 'n/a', place, dob }) {
   };
 
   return (
-    <div className="Login bg-dark">
-      <Form className='mt-5'>
+    <div className="Login">
+      {/* <Form className='mt-5'>
         <FormGroup>
           <Label for="username">Username</Label>
           <Input
@@ -85,37 +85,44 @@ export function Login({ name = 'n/a', place, dob }) {
         </FormGroup>
         <FormGroup>
           <Label for="password">Password</Label>
-          <Input type="password" id="password" placeholder="Enter your password" />
+          <Input type="password" id="password" placeholder="Enter your password" required minLength="12" />
         </FormGroup>
         <Button onClick={() => dispatch(setActiveUser({ username, navigate }))}>
           Login
         </Button>
-        <header>
-          <h4>Login</h4>
-        </header>
-        <FormGroup className="form_wrapper">
-          <Input type="text" id="input" required />
-          <Label for="input">Username</Label>
-          <i className="material-icons">person</i>
-        </FormGroup>
-        <FormGroup className="form_wrapper">
-          <Input type="password" id="password" required />
-          <Label for="password">Password</Label>
-          <i className="material-icons">lock</i>
-        </FormGroup>
-        <div className="remember_box">
-          <div className="remember">
-            <Input type="checkbox" />
-            <span>Remember me</span>
-          </div>
-          <a href="#">Forgot Password ?</a>
-        </div>
-        <Button>Login</Button>
-        <div className="new_account">
-          Don't have an account ? <a href="#">Sign up</a>
-        </div>
-      </Form>
-    </div>
+      </Form> */}
+      <h1>Login Form</h1>
+      <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col xs={12} md={8} lg={6}>
+          <Form id="contact-form">
+            <FormGroup>
+              <Label for="contact-form-name">Username</Label>
+              <Input type="text" className="contact-inputfields"  required minLength="8" 
+               id="username"
+               placeholder="Enter your username"
+               value={username}
+               onChange={handleChange}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="contact-form-email">Email:</Label>
+              <Input type="email" id="contact-form-email" className="contact-inputfields" placeholder="Email:" required minLength="12" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="contact-form-subject">Password</Label>
+              <Input type="password" id="contact-form-password" className="contact-inputfields" placeholder="Password" required minLength="6" />
+            </FormGroup>
+            <Button onClick={() => dispatch(setActiveUser({ username, navigate }))} id="contact-formbtn" type="submit" className="btn contact-send-message" >Login</Button>
+            {/* <Button onClick={() => dispatch(setActiveUser({ username, navigate }))}>
+          Login old
+        </Button> */}
+          </Form>
+        </Col>
+      </Row>
+    </Container>
+
+ </div>
   );
 }
 
