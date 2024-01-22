@@ -8,9 +8,10 @@ import ProductDetail from "./Pages/ProductDetail";
 // import ProductDetailtrial from "./Pages/ProductDetailtrial";
 import Cart from "./Pages/Cart";
 import Navbar from "./components/MyNav";
-// import './App.css';
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

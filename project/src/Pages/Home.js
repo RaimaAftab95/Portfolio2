@@ -23,6 +23,9 @@ import Slider from "../components/Slider";
 import { slidesData } from "../components/data";
 import "../components/Slider.css";
 import "./Home.css";
+// import ProductSlider from "../Components/ProductSlider";
+// import PopularProducts from "./PopularProducts";
+import PopularProducts from "./PopularProducts";
 
 export default function Home() {
   // hook to nevigate dont need to destructure we can call it directly
@@ -54,6 +57,10 @@ export default function Home() {
   return (
     // instead of div we wrap in container
     <Container fluid>
+      <div className="p-5 m-5 bg-dark"> 
+        <PopularProducts />
+        </div>
+        
       {/* <Carosal2 /> */}
       <Carosal className="m-5" />
       {/* <Slider slides={Slider} />  */}
@@ -107,6 +114,7 @@ export default function Home() {
           </Col>
         ))}
       </Row>
+
       <Container fluid className="mt-5">
         <Row>
           <Col sm={12} xs={12} md={6} lg={6}>
