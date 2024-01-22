@@ -18,59 +18,66 @@ import { addToCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function ProductDetail() {
-  // use hook useParams to get url id as param it may have more than one param
-  // const obj = useParams();
-  //console.log("obj",obj);
-
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  // const navigate = useNavigate();
-  const [product, setproduct] = useState({});
-  const [quantity, setquantity] = useState(1);
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [activeImage, setActiveImage] = useState("");
 
+  // Fetch product data based on id
   useEffect(() => {
     const singleProduct = PRODUCTS.find((item) => item.id === id);
 
     setTimeout(() => {
       setLoading(false);
       if (singleProduct) {
-        setproduct(singleProduct);
+        setProduct(singleProduct);
+        setActiveImage(singleProduct.image);
       }
     }, 1000);
-    // if(singleProduct) {
-    //     setproduct(singleProduct);
-    // }
     console.log("id", id);
     console.log("singleProduct", singleProduct);
   }, []);
+  // id in array dependency
 
   const dispatch = useDispatch();
-  // Addtocart fun call
-  // bcz product is in global state so dont need to pass it in parameters in this func (product) in pink arrow
   const handleAddToCart = () => {
     console.log("addto cart func");
     dispatch(addToCart({ ...product, quantity }));
   };
 
-  const  DecQuantity= () =>{
-    console.log("Dec quantity");
+  // Calculate total price based on quantity
+  const calculateTotalPrice = () => {
+    return product.price * quantity;
   };
-  const AddQuantity = () =>{
-    console.log("add quantity");
+  // Update the active image when a thumbnail is clicked
+  const updateActiveImage = (image) => {
+    setActiveImage(image);
   };
- 
+  // quantity func
+  const DecQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    } else {
+      console.log("Can't go below 1");
+    }
+  };
 
+  const AddQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  // Return the JSX structure
   return (
     <Container>
       <h3 className="text-center mt-3 mb-4">Product Details</h3>
       {loading ? <Spinner color="primary">Loading...</Spinner> : null}
       <Row className="justify-content-center">
-        {/*Col className="bg-light border" */}
-        <Col  xs="12" sm="4">
+        <Col xs="12" sm="4">
           <Card>
             <img
               alt="Sample"
-              src={product.image}
+              src={activeImage}
               className="img-fluid"
               style={{
                 height: "100%",
@@ -78,6 +85,22 @@ export default function ProductDetail() {
                 objectFit: "cover",
               }}
             />
+            <Row className="flex flex-row justify-between h-24 mt-5 p-5">
+              {product.multipleimages &&
+                product.multipleimages.map((image, index) => (
+                  <Col key={index} xs={3}>
+                    <img
+                      src={image}
+                      alt=""
+                      className="img-fluid"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                      onClick={() => updateActiveImage(image)}
+                    />
+                  </Col>
+                ))}
+            </Row>
             <CardBody>
               <CardTitle tag="h5">{product.name}</CardTitle>
               <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -86,19 +109,79 @@ export default function ProductDetail() {
               <CardText>{product.description}</CardText>
               <ButtonGroup>
                 <Button onClick={DecQuantity}>-</Button>
-                <Button disabled>{quantity}</Button>
-                <Button onClick={AddQuantity}> +</Button>
+                <Button>{quantity}</Button>
+                <Button onClick={AddQuantity}>+</Button>
               </ButtonGroup>
-              <br></br>
-              {/*due to global state dont need to pass  (product) below */}
-              {/* <Button onClick={() => handleAddToCart()}>
-                  Add to Cart
-                </Button> */}
-              {/* now as we not paasing parameter we can write it as below */}
+              <br />
               <Button onClick={handleAddToCart}>Add to Cart</Button>
             </CardBody>
           </Card>
         </Col>
+        {/* Add other Col components as needed */}
+        {/* add col */}
+
+        <Col className="flex flex-col gap-4 lg:w-2/4">
+          <div>
+            <span className=" text-violet-600 font-semibold">
+              Rs {product.price}
+            </span>
+            <h1 className="text-3xl font-bold">Nike Invincible 3</h1>
+          </div>
+          <p className="text-gray-700">{product.description}</p>
+          <h6 className="text-2xl font-semibold">$ 199.00</h6>
+
+          
+          {/* Display Rating */}
+          <div>
+            {Array.from({ length: product.rating }, (_, index) => (
+              <span key={index} role="img" aria-label="star">
+                ⭐
+              </span>
+            ))}
+          </div>
+
+          {/* Display Reviews */}
+          {product.review && product.review.length > 0 && (
+            <div>
+              <h6>Reviews:</h6>
+              {product.review.map((review, index) => (
+                <div key={index}>
+                  <p>{review.text}</p>
+                  <span>{`Rating: ${review.rating}`}</span>
+                </div>
+              ))}
+            </div>
+          )}
+          <Row className="flex flex-row items-center gap-12">
+            <Col xs={4} className="flex flex-row items-center">
+              <Button
+                variant="light"
+                className="py-2 px-5 rounded-lg text-violet-800 text-3xl"
+                // onClick={() => setAmount((prev) => prev - 1)}
+              >
+                -
+              </Button>
+              <span className="py-4 px-6 rounded-lg">{"amount"}</span>
+              <Button
+                variant="light"
+                className="py-2 px-4 rounded-lg text-violet-800 text-3xl"
+                // onClick={() => setAmount((prev) => prev + 1)}
+              >
+                +
+              </Button>
+            </Col>
+
+            <br />
+            <h6>Total: Rs {calculateTotalPrice()}</h6>
+            <Button
+              variant="violet"
+              className="text-white font-semibold py-3 px-16 rounded-xl h-full"
+            >
+              Add to Cart
+            </Button>
+          </Row>
+        </Col>
+        {/* other col close */}
       </Row>
       {loading ? <Spinner color="primary">Loading...</Spinner> : null}
     </Container>

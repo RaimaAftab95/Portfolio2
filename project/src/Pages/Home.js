@@ -65,7 +65,6 @@ export default function Home() {
           faucibus maximus vehicula.{" "}
         </span>
       </div>
-
       <h3 className="mt-5">Products List</h3>
       {loading ? <Spinner color="primary">Loading...</Spinner> : null}
       <Row>

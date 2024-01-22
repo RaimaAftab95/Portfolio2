@@ -11,7 +11,7 @@ export const PRODUCTS = [
     review: [
       {
         text: "abc",
-        rating: "",
+        rating: "8",
       },
     ],
     //   absolute path "/images/box7_image.jpg"
@@ -19,155 +19,299 @@ export const PRODUCTS = [
 
     // we can also show multiple images like
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-1-1.jpg",
     ],
   },
   {
     id: "pr-2",
     name: "Beats Headphone",
+    rating: 4,
+    review: [
+      {
+        text: "review-1",
+        rating: "8",
+      },
+      {
+        text: "review-2",
+        rating: "10",
+      },
+    ],
     description: "some short dis",
     price: 999,
     image: "/BOSHOP images/item-img-1-2-1.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-2.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-2-1.jpg",
     ],
   },
   {
     id: "pr-3",
     name: "Beats Headphone",
+    rating: 3,
+    review: [
+      {
+        text: "review-1",
+        rating: "2",
+      },
+      {
+        text: "review-2",
+        rating: "4",
+      },
+    ],
     description: "some short dis",
     price: 899,
     image: "/BOSHOP images/item-img-1-3.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-3-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-3.jpg",
     ],
   },
   {
     id: "pr-4",
     name: "Beats Headphone",
+    rating: 2,
+    review: [
+      {
+        text: "review-1",
+        rating: "6",
+      },
+      {
+        text: "review-2",
+        rating: "7",
+      },
+    ],
     description: "some short dis",
     price: 799,
     image: "/BOSHOP images/item-img-1-4.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-4-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-4.jpg",
     ],
   },
   {
     id: "pr-5",
     name: "Beats Headphone",
+    rating: 2,
+    review: [
+      {
+        text: "review-1",
+        rating: "6",
+      },
+      {
+        text: "review-2",
+        rating: "3",
+      },
+    ],
     description: "some short dis",
     price: 599,
     image: "/BOSHOP images/item-img-1-5.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-5-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
     ],
   },
   {
     id: "pr-6",
     name: "Beats Headphone",
+    rating: 2,
+    review: [
+      {
+        text: "review-1",
+        rating: "5",
+      },
+      {
+        text: "review-2",
+        rating: "5",
+      },
+    ],
     description: "some short dis",
     price: 399,
     image: "/BOSHOP images/item-img-1-6.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-6-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-6.jpg",
     ],
   },
   {
     id: "pr-7",
     name: "Beats Headphone",
+    rating: 2,
+    review: [
+      {
+        text: "review-2",
+        rating: "6",
+      },
+      {
+        text: "review-2",
+        rating: "9",
+      },
+    ],
     description: "some short dis",
     price: 8899,
     image: "/BOSHOP images/item-img-1-7.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-7-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-7.jpg",
     ],
   },
   {
     id: "pr-8",
     name: "Beats Headphone",
+    rating: 2,
+    review: [
+      {
+        text: "review-2",
+        rating: "9",
+      },
+      {
+        text: "review-2",
+        rating: "2",
+      },
+    ],
     description: "some short dis",
     price: 44999,
     image: "/BOSHOP images/item-img-1-8.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-8-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-8.jpg",
     ],
   },
   {
     id: "pr-9",
     name: "Beats Headphone",
+    rating: 2,
+    review: [
+      {
+        text: "review-2",
+        rating: "3",
+      },
+      {
+        text: "review-2",
+        rating: "4",
+      },
+    ],
     description: "some short dis",
     price: 33999,
     image: "/BOSHOP images/item-img-1-9.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-9-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-9.jpg",
     ],
   },
   {
     id: "pr-10",
     name: "Beats Headphone",
+    rating: 4,
+    review: [
+      {
+        text: "review-2",
+        rating: "6",
+      },
+      {
+        text: "review-2",
+        rating: "5",
+      },
+    ],
     description: "some short dis",
     price: 1999,
     image: "/BOSHOP images/item-img-1-10.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-10-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-10.jpg",
     ],
   },
   {
     id: "pr-11",
     name: "Beats Headphone",
+    rating: 8,
+    review: [
+      {
+        text: "review-2",
+        rating: "6",
+      },
+      {
+        text: "review-2",
+        rating: "5",
+      },
+    ],
     description: "some short dis",
     price: 1999,
     //image: "/BOSHOP images/item-img-1-21-1.jpg",
     //image: "/BOSHOP images/img-trial.webp",
     image: "/BOSHOP images/item-img-1-3.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-3-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-3.jpg",
     ],
   },
   {
     id: "pr-12",
     name: "Beats Headphone",
+    rating: 9,
+    review: [
+      {
+        text: "review-2",
+        rating: "6",
+      },
+      {
+        text: "review-2",
+        rating: "5",
+      },
+    ],
     description: "some short dis",
     price: 1999,
+    rating: 10,
+    review: [
+      {
+        text: "dfsdfdsff",
+        rating: "7",
+      },
+      {
+        text: "review-2",
+        rating: "3",
+      },
+    ],
     //image: "/BOSHOP images/item-img-1-20-1.png",
     image: "/BOSHOP images/item-img-1-5.jpg",
     multipleimages: [
-      "/images/box6_image.jpg",
+      "/BOSHOP images/item-img-1-5-1.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
     ],
   },
 ];
 
 // every data should be in this file like slider data
-export const slider = [
-  {
-    img: "",
-    text: "",
-  },
-];
+// export const slider = [
+//   {
+//     img: "",
+//     text: "",
+//   },
+// ];
 
 export const slidesData = [
   {

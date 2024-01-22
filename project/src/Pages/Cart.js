@@ -36,10 +36,21 @@ export default function Cart() {
   // const navigate = useNavigate();
 
   //   useselector hook bring your cart state in cart component bcz u need ur cart listing here
+
+  const getTotalnew = () => {
+    let totalPrice = 0;
+    cart.forEach((item) => {
+      const quantity = item.quantity ?? 1; // Use 1 as the default quantity if undefined or null
+      totalPrice += item.price * quantity;
+    });
+    return totalPrice;
+  };
+
   const getTotal = () => {
     let price = 0;
     cart.map((item) => {
-      price += item.price;
+      //price += item.price;
+      price += item.price*item.quantity;
     });
     return price;
   };
@@ -113,6 +124,7 @@ export default function Cart() {
               ))}
             </Col>
             <h3>Total:{getTotal()}</h3>
+            <h3>Totalnew: Rs {getTotalnew()}</h3>
           </Row>
           {/* {loading ? <Spinner color="primary">Loading...</Spinner> : null} */}
           {/* <Button>Checkout</Button> */}
@@ -120,7 +132,7 @@ export default function Cart() {
           <Button onClick={() => dispatch(emptyCart())}>Emptycart</Button>
         </>
       ) : (
-        <p>Pz login</p>
+        <p>Pz login to view Cart</p>
       )}
     </Container>
   );
