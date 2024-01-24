@@ -23,8 +23,8 @@ export default function ProductDetail() {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState("");
-  const [activeTab, setActiveTab] = useState("newArrival");
-
+  //const [activeTab, setActiveTab] = useState("newArrival");
+  const activeTab = useSelector((state) => state.activeTab); // Assuming you have a state for active tab
   // Fetch product data based on id
   useEffect(() => {
 
@@ -138,6 +138,7 @@ const singleProduct = productsArray.find((item) => item.id === id);
               Rs {product.price}
             </span>
             <h1 className="text-3xl font-bold">Nike Invincible 3</h1>
+            <h1 className="text-3xl font-bold">{product.name}</h1>
           </div>
           <p className="text-gray-700">{product.description}</p>
           <h6 className="text-2xl font-semibold">$ 199.00</h6>
