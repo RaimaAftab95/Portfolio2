@@ -244,6 +244,7 @@ import { removeFromCart, emptyCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import "./Cart.css";
+import { addToCart } from "./redux/cart";
 import { v4 as uuidv4 } from "uuid"; // Import uuid to generate a unique order number
 
 export default function Cart() {
@@ -253,17 +254,45 @@ export default function Cart() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(true);
   const [orderNumber, setOrderNumber] = useState("");
+  // const [product, setProduct] = useState({});
+  // const [quantity, setQuantity] = useState(1);
 
+  // Calculate total price based on quantity
+  //  const calculateTotalPrice = () => {
+  //   return product.price * quantity;
+  // };
+
+  // const handleAddToCart = () => {
+  //   console.log("addto cart func");
+  //   dispatch(addToCart({ ...product, quantity }));
+  //   console.log("product detail page: product quantity",product, quantity);
+  // };
   const getTotalnew = () => {
     let totalPrice = 0;
     let totalQuantity = 0;
     cart.forEach((item) => {
-      const quantity = item.quantity ?? 1;
+      const quantity = item.quantity || 1;
       totalPrice += item.price * quantity;
       totalQuantity += quantity;
+      console.log("quantity", quantity);
+      console.log(totalPrice);
+      console.log(totalQuantity);
     });
     return { totalPrice, totalQuantity };
   };
+
+  // const getTotalnew = () => {
+  //   let totalPrice = 0;
+  //   let totalQuantity = 0;
+
+  //   cart.forEach((item) => {
+  //     const quantity = item.quantity || 1; // Use 1 as the default quantity if undefined
+  //     totalPrice += item.price * quantity;
+  //     totalQuantity += quantity;
+  //   });
+
+  //   return { totalPrice, totalQuantity };
+  // };
 
   const handleDelete = (item) => {
     dispatch(removeFromCart(item.id));
@@ -274,8 +303,7 @@ export default function Cart() {
       <Modal isOpen={modalOpen} toggle={() => setModalOpen(false)}>
         {/* ... (your existing modal code) */}
         <ModalHeader toggle={() => setModalOpen(false)}>
-          {" "}
-          Modal title
+          CHECK OUT FORM
         </ModalHeader>
         <ModalBody>
           <Row>
@@ -334,13 +362,12 @@ export default function Cart() {
                     <CardSubtitle className="mb-2 text-muted" tag="h6">
                       Rs {item.price}
                     </CardSubtitle>
-                    <CardText>Quantity: {item.quantity}</CardText>
+                    <CardText className="d-none">Quantity:{item.quantity}</CardText>
                   </CardBody>
                 </Card>
               ))}
-              {/* <h6>Total: Rs {getTotalnew()}</h6> */}
               <h6>Total Quantity: {getTotalnew().totalQuantity}</h6>
-<h6>Total: Rs {getTotalnew().totalPrice}</h6>
+              <h6>Total: Rs {getTotalnew().totalPrice}</h6>
             </Col>
           </Row>
         </ModalBody>
@@ -359,7 +386,7 @@ export default function Cart() {
             color="primary"
           >
             Place Order
-          </Button>{" "}
+          </Button>
           <Button onClick={() => setModalOpen(false)} color="secondary">
             Cancel
           </Button>
@@ -376,8 +403,8 @@ export default function Cart() {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <th className="d-none">Quantity</th>
+                <th className="d-none">Total</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -398,27 +425,20 @@ export default function Cart() {
                   </td>
                   <td>{item.name}</td>
                   <td>Rs {item.price}</td>
-                  <td>{item.quantity}</td>
-                  <td>Rs {item.price * item.quantity}</td>
+                  <td className="d-none">{item.quantity}</td>
+                  <td className="d-none">{item.quantity * item.price}</td>
                   <td>
-                    <Button onClick={() => handleDelete(item)}>Remove</Button>
+                    <Button onClick={() => handleDelete(item)}>
+                      <i class="fa-solid fa-trash"></i>
+                    </Button>
                   </td>
                 </tr>
               ))}
             </tbody>
-            {/* <tfoot>
-              <tr>
-                <td colSpan="4" className="text-right">
-                  Grand Total:
-                </td>
-                <td>Rs {getTotalnew()}</td>
-                <td></td>
-              </tr>
-            </tfoot> */}
             <tfoot>
               <tr>
                 <td colSpan="3" className="text-right">
-                  Total Quantity:
+                  TotalQuantity:
                 </td>
                 <td>{getTotalnew().totalQuantity}</td>
                 <td colSpan="2"></td>
@@ -433,7 +453,9 @@ export default function Cart() {
             </tfoot>
           </Table>
           <Button onClick={() => setModalOpen(true)}>Checkout</Button>
-          <Button onClick={() => dispatch(emptyCart())}>Emptycart</Button>
+          <Button onClick={() => dispatch(emptyCart())}>
+            <i class="fa-solid fa-trash"></i>
+          </Button>
         </>
       ) : (
         <p>Please login to view the Cart</p>

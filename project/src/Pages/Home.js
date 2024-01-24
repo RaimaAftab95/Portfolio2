@@ -33,7 +33,7 @@ export default function Home() {
   const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
   // tabs state handling
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState("newArrival");
 
   useEffect(() => {
     setTimeout(() => {
@@ -50,7 +50,7 @@ const handleTabChange = (tab) => {
   setLoading(true);
   setTimeout(() => {
   setLoading(false);
-  setProductList(tab === 1 ? PRODUCTS : bestSelling);
+  setProductList(tab === "newArrival" ? PRODUCTS : bestSelling);
   }, 1000);
 };
 
@@ -78,7 +78,7 @@ const handleTabChange = (tab) => {
               className={activeTab === "newArrival" ? "active" : ""}
               onClick={() => handleTabChange("newArrival")}
             > */}
-            <NavLink className="active" onClick={() => handleTabChange(1)}>
+            <NavLink className="active" onClick={() => handleTabChange("newArrival")}>
               New Arrival
             </NavLink>
           </NavItem>
@@ -87,7 +87,7 @@ const handleTabChange = (tab) => {
               className={activeTab === "bestSelling" ? "active" : ""}
               onClick={() => handleTabChange("bestSelling")}
             > */}
-            <NavLink className="" onClick={ () => handleTabChange(2)}>
+            <NavLink className="" onClick={ () => handleTabChange("bestSelling")}>
               Best Selling
             </NavLink>
           </NavItem>

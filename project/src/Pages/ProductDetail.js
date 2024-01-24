@@ -24,9 +24,9 @@ export default function ProductDetail() {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState("");
-  //const [activeTab, setActiveTab] = useState("newArrival");
+  const [activeTab, setActiveTab] = useState("newArrival");
   // activeTab is retrieved from the Redux state,
-  const activeTab = useSelector((state) => state.activeTab); 
+  //const activeTab = useSelector((state) => state.activeTab); 
   // Fetch product data based on id
   useEffect(() => {
 
@@ -34,10 +34,10 @@ export default function ProductDetail() {
     //const productsArray = activeTab === "newArrival" ? PRODUCTS : bestSelling;
 // Choose the product array based on the activeTab
 const productsArray =
-activeTab === 1 ? PRODUCTS : bestSelling;
+activeTab === "newArrival" ? PRODUCTS : bestSelling;
 
 const singleProduct = productsArray.find((item) => item.id === id);
-
+console.log("singleProduct", singleProduct);
     //const singleProduct = PRODUCTS.find((item) => item.id === id);
 
     setTimeout(() => {
@@ -45,6 +45,7 @@ const singleProduct = productsArray.find((item) => item.id === id);
       if (singleProduct) {
         setProduct(singleProduct);
         setActiveImage(singleProduct.image);
+        setActiveTab(singleProduct.description)
  console.log("activeTab:", activeTab);
     console.log("id:", id);
       }

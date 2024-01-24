@@ -16,7 +16,16 @@ const cartSlice = createSlice({
         newcart.push(action.payload);
         toast.success("Item add to cart");
       } else {
-        toast.info("Item is already in cart");
+         // Item already exists in the cart, update the quantity
+         //create a new object for entire cart quantity
+         //newcart[found].quantity += action.payload.quantity;
+       // toast.info("Item is already in cart");
+
+       newcart[found] = {
+        ...newcart[found],
+        quantity: newcart[found].quantity + action.payload.quantity,
+      };
+       toast.info("Item quantity updated in cart");
       }
       return newcart;
     },
