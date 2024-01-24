@@ -18,13 +18,15 @@ import { addToCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function ProductDetail() {
+
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState("");
   //const [activeTab, setActiveTab] = useState("newArrival");
-  const activeTab = useSelector((state) => state.activeTab); // Assuming you have a state for active tab
+  // activeTab is retrieved from the Redux state,
+  const activeTab = useSelector((state) => state.activeTab); 
   // Fetch product data based on id
   useEffect(() => {
 
@@ -32,7 +34,7 @@ export default function ProductDetail() {
     //const productsArray = activeTab === "newArrival" ? PRODUCTS : bestSelling;
 // Choose the product array based on the activeTab
 const productsArray =
-activeTab === "newArrival" ? PRODUCTS : bestSelling;
+activeTab === 1 ? PRODUCTS : bestSelling;
 
 const singleProduct = productsArray.find((item) => item.id === id);
 
@@ -43,11 +45,15 @@ const singleProduct = productsArray.find((item) => item.id === id);
       if (singleProduct) {
         setProduct(singleProduct);
         setActiveImage(singleProduct.image);
+ console.log("activeTab:", activeTab);
+    console.log("id:", id);
       }
     }, 1000);
+    console.log("activeTab:", activeTab);
+    console.log("id:", id);
     console.log("id", id);
     console.log("singleProduct", singleProduct);
-  }, [id,activeTab]);
+  }, [id, activeTab]);
   // id in array dependency [id, activeTab]);
 
   const dispatch = useDispatch();

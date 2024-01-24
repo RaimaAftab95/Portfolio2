@@ -33,17 +33,28 @@ export default function Home() {
   const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
   // tabs state handling
-  const [activeTab, setActiveTab] = useState("newArrival");
+  const [activeTab, setActiveTab] = useState(1);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-      // setProductList(PRODUCTS);
+     setProductList(PRODUCTS);
       // Set the product list based on the active tab
-      setProductList(activeTab === "newArrival" ? PRODUCTS : bestSelling);
+      //setProductList(activeTab === "newArrival" ? PRODUCTS : bestSelling);
     }, 1000);
-  }, [activeTab]);
+  }, [ activeTab]);
   // activeTab remove from array dependency
+// handle tabs
+const handleTabChange = (tab) => {
+  //setActiveTab(tab);
+  setLoading(true);
+  setTimeout(() => {
+  setLoading(false);
+  setProductList(tab === 1 ? PRODUCTS : bestSelling);
+  }, 1000);
+};
+
+
   const onPressDetails = (id) => {
     //alert(id);
     navigate("/productDetail/" + id);
@@ -55,11 +66,7 @@ export default function Home() {
     console.log("addto cart func");
     dispatch(addToCart(product));
   };
-  // handle tabs
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
-
+  
   return (
     // instead of div we wrap in container
     <Container fluid>
@@ -67,114 +74,25 @@ export default function Home() {
       <Container fluid className="mt-5">
         <Nav tabs className="mt-5">
           <NavItem>
-            <NavLink
+            {/* <NavLink
               className={activeTab === "newArrival" ? "active" : ""}
               onClick={() => handleTabChange("newArrival")}
-            >
+            > */}
+            <NavLink className="active" onClick={() => handleTabChange(1)}>
               New Arrival
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink
+            {/* <NavLink
               className={activeTab === "bestSelling" ? "active" : ""}
               onClick={() => handleTabChange("bestSelling")}
-            >
+            > */}
+            <NavLink className="" onClick={ () => handleTabChange(2)}>
               Best Selling
             </NavLink>
           </NavItem>
           {/* Add more tabs if needed */}
         </Nav>
-
-        <TabContent activeTab={activeTab}>
-          <TabPane tabId="newArrival">
-            <Row>
-              {productList.map((item, index) => (
-                <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
-                  <Card
-                    className="arrival-block"
-                    onClick={() => onPressDetails(item.id)}
-                  >
-                    {/* ... existing code ... */}
-                    <img
-                      alt="Sample"
-                      src={item.image}
-                      className="img-fluid"
-                      style={{
-                        height: "100%",
-                        width: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                    <CardBody>
-                      <CardTitle tag="h5">{item.name}</CardTitle>
-                      <CardSubtitle className="mb-2 text-muted" tag="h6">
-                        Rs {item.price}
-                      </CardSubtitle>
-                      <CardText>Product Detail</CardText>
-
-                      <Button
-                        className="add-to-cart-btn"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          handleAddToCart(item);
-                        }}
-                      >
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        Add to Cart
-                      </Button>
-                    </CardBody>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </TabPane>
-
-          <TabPane tabId="bestSelling">
-            <Row>
-              {/* // Use productList here instead of bestSelling */}
-              {productList.map((item, index) => (
-                // ... existing code ...
-                <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
-                  <Card
-                    className="arrival-block"
-                    onClick={() => onPressDetails(item.id)}
-                  >
-                    {/* ... existing code ... */}
-                    <img
-                      alt="Sample"
-                      src={item.image}
-                      className="img-fluid"
-                      style={{
-                        height: "100%",
-                        width: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                    <CardBody>
-                      <CardTitle tag="h5">{item.name}</CardTitle>
-                      <CardSubtitle className="mb-2 text-muted" tag="h6">
-                        Rs {item.price}
-                      </CardSubtitle>
-                      <CardText>Product Detail</CardText>
-
-                      <Button
-                        className="add-to-cart-btn"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          handleAddToCart(item);
-                        }}
-                      >
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        Add to Cart
-                      </Button>
-                    </CardBody>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </TabPane>
-          {/* Add more TabPane sections for additional tabs */}
-        </TabContent>
       </Container>
       <section>
         <div className="mt-5 mb-5  aligntext-center">

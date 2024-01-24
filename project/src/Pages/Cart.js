@@ -256,11 +256,13 @@ export default function Cart() {
 
   const getTotalnew = () => {
     let totalPrice = 0;
+    let totalQuantity = 0;
     cart.forEach((item) => {
       const quantity = item.quantity ?? 1;
       totalPrice += item.price * quantity;
+      totalQuantity += quantity;
     });
-    return totalPrice;
+    return { totalPrice, totalQuantity };
   };
 
   const handleDelete = (item) => {
@@ -402,13 +404,29 @@ export default function Cart() {
                 </tr>
               ))}
             </tbody>
-            <tfoot>
+            {/* <tfoot>
               <tr>
                 <td colSpan="4" className="text-right">
                   Grand Total:
                 </td>
                 <td>Rs {getTotalnew()}</td>
                 <td></td>
+              </tr>
+            </tfoot> */}
+            <tfoot>
+              <tr>
+                <td colSpan="3" className="text-right">
+                  Total Quantity:
+                </td>
+                <td>{getTotalnew().totalQuantity}</td>
+                <td colSpan="2"></td>
+              </tr>
+              <tr>
+                <td colSpan="3" className="text-right">
+                  Grand Total:
+                </td>
+                <td>Rs {getTotalnew().totalPrice}</td>
+                <td colSpan="2"></td>
               </tr>
             </tfoot>
           </Table>
