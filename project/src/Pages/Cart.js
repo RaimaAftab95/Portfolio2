@@ -251,7 +251,7 @@ export default function Cart() {
   const dispatch = useDispatch();
   const { cart, user } = useSelector((state) => state);
   const [loading, setLoading] = useState(true);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
   const [orderNumber, setOrderNumber] = useState("");
 
   const getTotalnew = () => {
@@ -338,7 +338,9 @@ export default function Cart() {
                   </CardBody>
                 </Card>
               ))}
-              <h6>Total: Rs {getTotalnew()}</h6>
+              {/* <h6>Total: Rs {getTotalnew()}</h6> */}
+              <h6>Total Quantity: {getTotalnew().totalQuantity}</h6>
+<h6>Total: Rs {getTotalnew().totalPrice}</h6>
             </Col>
           </Row>
         </ModalBody>

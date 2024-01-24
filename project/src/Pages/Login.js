@@ -60,6 +60,7 @@ import { setActiveUser } from './redux/user';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import { toast } from 'react-toastify';
 
 export function Login({ name = 'n/a', place, dob }) {
   const navigate = useNavigate();
@@ -70,6 +71,10 @@ export function Login({ name = 'n/a', place, dob }) {
     setusername(event.target.value);
   };
 
+  const handlelogin = () => {
+  if(username.length > 4) dispatch (setActiveUser({username, navigate}));
+  else toast("username is not valid",{type:"error"});
+  }
   return (
     <div className="Login">
       {/* <Form className='mt-5'>
@@ -113,7 +118,13 @@ export function Login({ name = 'n/a', place, dob }) {
               <Label for="contact-form-subject">Password</Label>
               <Input type="password" id="contact-form-password" className="contact-inputfields" placeholder="Password" required minLength="6" />
             </FormGroup>
-            <Button onClick={() => dispatch(setActiveUser({ username, navigate }))} id="contact-formbtn" type="submit" className="btn contact-send-message" >Login</Button>
+            <Button onClick={handlelogin} id="contact-formbtn" type="submit" className="btn contact-send-message" >Login</Button>
+            {/*only dispatch if user name is true */}
+
+
+            {/* <Button onClick={() => dispatch(setActiveUser({ username, navigate }))} id="contact-formbtn" type="submit" className="btn contact-send-message" >Login</Button> */}
+
+
             {/* <Button onClick={() => dispatch(setActiveUser({ username, navigate }))}>
           Login old
         </Button> */}

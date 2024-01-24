@@ -1,4 +1,3 @@
-// ScrollToTop.js
 import React, { useState, useEffect } from 'react';
 import "./ScrollToTop.css";
 
@@ -8,7 +7,7 @@ const ScrollToTop = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsVisible(scrollTop > 100);
+      setIsVisible(scrollTop > 1000);
     };
 
     window.addEventListener('scroll', handleScroll);

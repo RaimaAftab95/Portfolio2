@@ -298,15 +298,15 @@ const items = [
   {
     //src: "/BOSHOP images/sliderimg3-purple.jpg",
     src: "/BOSHOP images/headphone.jpg",
-    altText: "Slide 1",
-    caption: "Slide 1",
+    // altText: "Slide 1",
+    // caption: "Slide 1",
     key: 1,
     text: "This is the text for Slide 1",
   },
   {
     src: "/BOSHOP images/slide-bg-1.png",
-    altText: "Slide 2",
-    caption: "Slide 2",
+    // altText: "Slide 2",
+    // caption: "Slide 2",
     key: 2,
     text: "This is the text for Slide 2",
   },
@@ -315,8 +315,8 @@ const items = [
      //src: "/BOSHOP images/slide2.jpg",
      src: "/BOSHOP images/shoe slider.jpg",
     
-    altText: "Slide 3",
-    caption: "Slide 3",
+    // altText: "Slide 3",
+    // caption: "Slide 3",
     key: 3,
     text: "This is the text for Slide 3",
   },
@@ -390,7 +390,7 @@ function Carosal(args) {
               <Container fluid>
                 <Row className="position-center-center">
                   <Col lg={8} className="text-left no-padding">
-                    <span className="price"><small>$</small>299.99</span>
+                    <span className="price"><small>Sale</small>$299.99</span>
                     <h4>The Latest Winter Products for 2018</h4>
                     <h1 className="extra-huge-text">look hot with 2018 style</h1>
                     <div className="text-btn">
