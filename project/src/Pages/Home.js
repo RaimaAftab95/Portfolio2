@@ -14,7 +14,7 @@ import {
   Col,
 } from "reactstrap";
 import { addToCart } from "./redux/cart";
-import { PRODUCTS } from "../components/data";
+import { PRODUCTS, bestSelling } from "../components/data";
 import Carosal from "../components/Carosal";
 import Carosal2 from "../components/Carosal2";
 import Slider from "../components/Slider";
@@ -23,6 +23,7 @@ import "../components/Slider.css";
 import "./Home.css";
 import "./PopularProducts.css";
 import PopularProducts from "./PopularProducts";
+import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 
 export default function Home() {
   // hook to nevigate dont need to destructure we can call it directly
@@ -31,14 +32,18 @@ export default function Home() {
   const reduxState = useSelector((state) => state);
   const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
+  // tabs state handling
+  const [activeTab, setActiveTab] = useState("newArrival");
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-      setProductList(PRODUCTS);
+      // setProductList(PRODUCTS);
+      // Set the product list based on the active tab
+      setProductList(activeTab === "newArrival" ? PRODUCTS : bestSelling);
     }, 1000);
-  }, []);
-
+  }, [activeTab]);
+  // activeTab remove from array dependency
   const onPressDetails = (id) => {
     //alert(id);
     navigate("/productDetail/" + id);
@@ -50,63 +55,178 @@ export default function Home() {
     console.log("addto cart func");
     dispatch(addToCart(product));
   };
+  // handle tabs
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
 
   return (
-
     // instead of div we wrap in container
     <Container fluid>
-     
       <Slider slides={slidesData} />
-      <div className="mt-5 mb-5">
-        <h4>Best Collection Arrived</h4>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          faucibus maximus vehicula.{" "}
-        </span>
-      </div>
-      <h3 className="mt-5">Products List</h3>
-      {loading ? <Spinner color="primary">Loading...</Spinner> : null}
-      <Row>
-        {productList.map((item, index) => (
-          <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
-            <Card
-              className="arrival-block"
-              onClick={() => onPressDetails(item.id)}
+      <Container fluid className="mt-5">
+        <Nav tabs className="mt-5">
+          <NavItem>
+            <NavLink
+              className={activeTab === "newArrival" ? "active" : ""}
+              onClick={() => handleTabChange("newArrival")}
             >
-              <img
-                alt="Sample"
-                src={item.image}
-                className="img-fluid"
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "cover",
-                }}
-              />
-              <CardBody>
-                <CardTitle tag="h5">{item.name}</CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Rs {item.price}
-                </CardSubtitle>
-                <CardText>Product Detail</CardText>
+              New Arrival
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              className={activeTab === "bestSelling" ? "active" : ""}
+              onClick={() => handleTabChange("bestSelling")}
+            >
+              Best Selling
+            </NavLink>
+          </NavItem>
+          {/* Add more tabs if needed */}
+        </Nav>
 
-                <Button
-                  className="add-to-cart-btn"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    handleAddToCart(item);
+        <TabContent activeTab={activeTab}>
+          <TabPane tabId="newArrival">
+            <Row>
+              {productList.map((item, index) => (
+                <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
+                  <Card
+                    className="arrival-block"
+                    onClick={() => onPressDetails(item.id)}
+                  >
+                    {/* ... existing code ... */}
+                    <img
+                      alt="Sample"
+                      src={item.image}
+                      className="img-fluid"
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <CardBody>
+                      <CardTitle tag="h5">{item.name}</CardTitle>
+                      <CardSubtitle className="mb-2 text-muted" tag="h6">
+                        Rs {item.price}
+                      </CardSubtitle>
+                      <CardText>Product Detail</CardText>
+
+                      <Button
+                        className="add-to-cart-btn"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          handleAddToCart(item);
+                        }}
+                      >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                      </Button>
+                    </CardBody>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </TabPane>
+
+          <TabPane tabId="bestSelling">
+            <Row>
+              {/* // Use productList here instead of bestSelling */}
+              {productList.map((item, index) => (
+                // ... existing code ...
+                <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
+                  <Card
+                    className="arrival-block"
+                    onClick={() => onPressDetails(item.id)}
+                  >
+                    {/* ... existing code ... */}
+                    <img
+                      alt="Sample"
+                      src={item.image}
+                      className="img-fluid"
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <CardBody>
+                      <CardTitle tag="h5">{item.name}</CardTitle>
+                      <CardSubtitle className="mb-2 text-muted" tag="h6">
+                        Rs {item.price}
+                      </CardSubtitle>
+                      <CardText>Product Detail</CardText>
+
+                      <Button
+                        className="add-to-cart-btn"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          handleAddToCart(item);
+                        }}
+                      >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                      </Button>
+                    </CardBody>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </TabPane>
+          {/* Add more TabPane sections for additional tabs */}
+        </TabContent>
+      </Container>
+      <section>
+        <div className="mt-5 mb-5  aligntext-center">
+          <h4 className="heading">Best Collection Arrived</h4>
+          <span className="plain-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            faucibus maximus vehicula.
+          </span>
+        </div>
+        <h3 className="mt-5">Products List</h3>
+        {loading ? <Spinner color="primary">Loading...</Spinner> : null}
+        <Row>
+          {productList.map((item, index) => (
+            <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
+              <Card
+                className="arrival-block"
+                onClick={() => onPressDetails(item.id)}
+              >
+                <img
+                  alt="Sample"
+                  src={item.image}
+                  className="img-fluid"
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
                   }}
-                >
-                  <i class="fa-solid fa-cart-shopping"></i>
-                  Add to Cart
-                </Button>
-              </CardBody>
-            </Card>
-            {/* </Link> */}
-          </Col>
-        ))}
-      </Row>
+                />
+                <CardBody>
+                  <CardTitle tag="h5">{item.name}</CardTitle>
+                  <CardSubtitle className="mb-2 text-muted" tag="h6">
+                    Rs {item.price}
+                  </CardSubtitle>
+                  <CardText>Product Detail</CardText>
 
+                  <Button
+                    className="add-to-cart-btn"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      handleAddToCart(item);
+                    }}
+                  >
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                  </Button>
+                </CardBody>
+              </Card>
+              {/* </Link> */}
+            </Col>
+          ))}
+        </Row>
+      </section>
       <Container fluid className="mt-5">
         <Row>
           <Col sm={12} xs={12} md={6} lg={6}>
@@ -149,14 +269,14 @@ export default function Home() {
       <Container fluid className="mt-5">
         <Row>
           <Col sm={12} xs={12} md={6} lg={6}>
-            <div class="about-us-con">
+            <div className="about-us-con">
               <h3>Fully Customizability Options Look Beautiful in 2018</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Maecenas nibh dolor, efficitur eget pharetra ac, cursus sed
-                sapien. Cras posuere ligula ut blandit varius.{" "}
+                sapien. Cras posuere ligula ut blandit varius.
               </p>
-              <ul class="order-info d-flex">
+              <ul className="order-info d-flex">
                 <li>
                   <img
                     className="img-fluid"
@@ -192,10 +312,61 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
-
-      <div className="p-5 m-5 PopularProducts-bg">
-        <PopularProducts />
-      </div>
+      <section>
+        <div className="p-5 m-5 PopularProducts-bg">
+          <div className="mt-5 mb-5  aligntext-center">
+            <h4 className="heading text-white">Popular Products</h4>
+            <span className="plain-text text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              faucibus maximus vehicula.
+            </span>
+          </div>
+          <PopularProducts />
+        </div>
+      </section>
+      <section>
+        <Container fluid>
+          <Row>
+            <Col>
+            <h4></h4>
+            <img></img>
+            <img></img>
+            <img></img>
+            <img></img>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className="shipment">
+      <Container>
+        <Row>
+          <Col xs="12" sm="6" md="3">
+            <div className="text-center">
+            <img className="img-fluid image-50" src="/BOSHOP images/freeshipping.png"></img>
+              <h4>Free Shipment Over 50$</h4>
+            </div>
+          </Col>
+          <Col xs="12" sm="6" md="3">
+            <div className="text-center">
+            <img className="img-fluid image-50" src="/BOSHOP images/onlinesupport.png"></img>
+              <h4>24/7 online Support</h4>
+            </div>
+          </Col>
+          <Col xs="12" sm="6" md="3">
+            <div className="text-center">
+            <img className="img-fluid image-50" src="/BOSHOP images/credit-card.png"></img>
+              <h4>100% Secure Payment</h4>
+            </div>
+          </Col>
+          <Col xs="12" sm="6" md="3">
+            <div className="text-center">
+              <img className="img-fluid image-50" src="/BOSHOP images/fast-delivery.png"></img>
+              <h4>World Wide Shipment</h4>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
 
       <Carosal className="m-5" />
     </Container>

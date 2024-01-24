@@ -276,14 +276,6 @@ export default function Cart() {
           Modal title
         </ModalHeader>
         <ModalBody>
-          {/* <input placeholder="FullName" />
-          <br />
-           <input placeholder="Billing address" />
-           <br />
-         <input placeholder="Shipping Address" />
-           <br />
-           <input placeholder="Cash on Delivery" /> */}
-
           <Row>
             {/* Billing and Shipping Information Form */}
             <Col md={6}>

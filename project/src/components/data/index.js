@@ -313,6 +313,275 @@ export const PRODUCTS = [
 //   },
 // ];
 
+export const bestSelling = [
+  {
+    id: "bs-1",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-2",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/best-seller-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  
+  {
+    id: "bs-3",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-4",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-5",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-6",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-7",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-8",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-9",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-10",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+  {
+    id: "bs-11",
+    name: "Best Selling Headphone",
+    rating: 5,
+    review: [
+      {
+        text: "Best review",
+        rating: "9",
+      },
+      {
+        text: "Another review",
+        rating: "10",
+      },
+    ],
+    description: "Some short description",
+    price: 1299,
+    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    multipleimages: [
+      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/images/box7_image.jpg",
+      "/images/box4_image.jpg",
+      "/BOSHOP images/item-img-1-5.jpg",
+    ],
+  },
+];
+
+
 export const slidesData = [
   {
     id: "001",

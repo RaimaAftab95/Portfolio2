@@ -13,7 +13,7 @@ import {
   Col,
   ButtonGroup,
 } from "reactstrap";
-import { PRODUCTS } from "../components/data";
+import { PRODUCTS,  bestSelling  } from "../components/data";
 import { addToCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -23,10 +23,20 @@ export default function ProductDetail() {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState("");
+  const [activeTab, setActiveTab] = useState("newArrival");
 
   // Fetch product data based on id
   useEffect(() => {
-    const singleProduct = PRODUCTS.find((item) => item.id === id);
+
+    // Choose the product array based on the activeTab
+    //const productsArray = activeTab === "newArrival" ? PRODUCTS : bestSelling;
+// Choose the product array based on the activeTab
+const productsArray =
+activeTab === "newArrival" ? PRODUCTS : bestSelling;
+
+const singleProduct = productsArray.find((item) => item.id === id);
+
+    //const singleProduct = PRODUCTS.find((item) => item.id === id);
 
     setTimeout(() => {
       setLoading(false);
@@ -37,13 +47,14 @@ export default function ProductDetail() {
     }, 1000);
     console.log("id", id);
     console.log("singleProduct", singleProduct);
-  }, []);
-  // id in array dependency
+  }, [id,activeTab]);
+  // id in array dependency [id, activeTab]);
 
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     console.log("addto cart func");
     dispatch(addToCart({ ...product, quantity }));
+    console.log("product detail page: product quantity",product, quantity);
   };
 
   // Calculate total price based on quantity
@@ -75,6 +86,7 @@ export default function ProductDetail() {
       <Row className="justify-content-center">
         <Col xs="12" sm="4">
           <Card>
+            
             <img
               alt="Sample"
               src={activeImage}
@@ -183,6 +195,14 @@ export default function ProductDetail() {
         </Col>
         {/* other col close */}
       </Row>
+
+      {/* add tabs */}
+      {/* <Row>
+        <Col sm="12">
+          <Button onClick={() => setActiveTab("newArrival")}>New Arrival</Button>
+          <Button onClick={() => setActiveTab("bestSelling")}>Best Selling</Button>
+        </Col>
+      </Row> */}
       {loading ? <Spinner color="primary">Loading...</Spinner> : null}
     </Container>
   );
