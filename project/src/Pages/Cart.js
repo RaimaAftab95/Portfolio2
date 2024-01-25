@@ -152,12 +152,6 @@ export default function Cart() {
       {user.name ? (
         <>
           <h3 className="heading">Shopping Cart</h3>
-          {loading ? (
-            <div className="my-spinner"><Spinner color="primary" className="">
-            Loading...
-          </Spinner></div>
-            
-          ) : null}
           <Table responsive className="p-5">
             <thead>
               <tr>
@@ -165,7 +159,7 @@ export default function Cart() {
                 <th>Name</th>
                 <th>Price</th>
                 <th >Quantity</th>
-                <th >Total</th>
+                <th>Total</th>
                 <th>Action</th>
               </tr>
             </thead>
