@@ -114,7 +114,8 @@ function MyNavbarT() {
             </NavItem>
             <NavItem>
               <Link className="nav_link text-color text-center" to="/button">
-                {user.name} is logged in
+                {/* {user.name} is logged in */}
+                {user.name && `${user.name} is logged in`}
               </Link>
             </NavItem>
           </Nav>
