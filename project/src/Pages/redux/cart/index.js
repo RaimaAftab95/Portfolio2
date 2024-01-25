@@ -21,10 +21,15 @@ const cartSlice = createSlice({
          //newcart[found].quantity += action.payload.quantity;
        // toast.info("Item is already in cart");
 
-       newcart[found] = {
-        ...newcart[found],
-        quantity: newcart[found].quantity + action.payload.quantity,
+      //  newcart[found] = {
+      //   ...newcart[found],
+      //   quantity: newcart[found].quantity += action.payload.quantity,
+
+        newcart[found] = {
+          ...newcart[found],
+          quantity: newcart[found].quantity +1,
       };
+      // newcart.push(action.payload);
        toast.info("Item quantity updated in cart");
       }
       return newcart;

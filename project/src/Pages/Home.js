@@ -61,10 +61,10 @@ export default function Home() {
     navigate("/productDetail/" + id);
   };
   const dispatch = useDispatch();
-
   const handleAddToCart = (product) => {
     console.log("addto cart func");
-    dispatch(addToCart(product));
+    //dispatch(addToCart(product));
+    dispatch(addToCart({...product,quantity : 1}));
   };
 
   return (

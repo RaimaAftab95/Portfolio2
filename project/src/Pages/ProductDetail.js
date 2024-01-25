@@ -17,6 +17,7 @@ import { PRODUCTS, bestSelling } from "../components/data";
 import { addToCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
 import "./ProductDetail.css";
+import { toast } from "react-toastify";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -49,8 +50,7 @@ export default function ProductDetail() {
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     console.log("addto cart func");
-    dispatch(addToCart({ ...product, quantity }));
-    console.log("product detail page: product quantity", product, quantity);
+    dispatch(addToCart({ ...product, quantity}));
   };
 
   // Calculate total price based on quantity
@@ -65,13 +65,20 @@ export default function ProductDetail() {
   const DecQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
-    } else {
+      console.log("product detail page: product quantity", product, quantity);
+    } else { 
       console.log("Can't go below 1");
+      toast.error("Too low quantity");
+      console.log("product detail page: product quantity", product, quantity);
     }
   };
 
   const AddQuantity = () => {
+    if (quantity < 25) {
     setQuantity(quantity + 1);
+  } else {
+    toast.error("Too high quantity out of stock");
+  }
   };
 
   return (

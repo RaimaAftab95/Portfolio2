@@ -26,7 +26,7 @@ import { removeFromCart, emptyCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import "./Cart.css";
-//import { addToCart } from "./redux/cart";
+import { addToCart } from "./redux/cart";
 import { v4 as uuidv4 } from "uuid"; // Import uuid to generate a unique order number
 
 export default function Cart() {
@@ -36,29 +36,17 @@ export default function Cart() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [orderNumber, setOrderNumber] = useState("");
-  // const [product, setProduct] = useState({});
-  // const [quantity, setQuantity] = useState(1);
-
-  // Calculate total price based on quantity
-  //  const calculateTotalPrice = () => {
-  //   return product.price * quantity;
-  // };
-
-  // const handleAddToCart = () => {
-  //   console.log("addto cart func");
-  //   dispatch(addToCart({ ...product, quantity }));
-  //   console.log("product detail page: product quantity",product, quantity);
-  // };
+ 
   const getTotalnew = () => {
     let totalPrice = 0;
     let totalQuantity = 0;
     cart.forEach((item) => {
-      const quantity = item.quantity || 1;
+      const quantity = item.quantity ?? 1;
       totalPrice += item.price * quantity;
       totalQuantity += quantity;
       console.log("quantity", quantity);
-      console.log(totalPrice);
-      console.log(totalQuantity);
+      console.log("tp",totalPrice);
+      console.log("tq",totalQuantity);
     });
     return { totalPrice, totalQuantity };
   };
@@ -126,7 +114,7 @@ export default function Cart() {
                     <CardSubtitle className="mb-2 text-muted" tag="h6">
                       Rs {item.price}
                     </CardSubtitle>
-                    <CardText className="d-none">
+                    <CardText>
                       Quantity:{item.quantity}
                     </CardText>
                   </CardBody>
@@ -176,8 +164,8 @@ export default function Cart() {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th className="d-none">Quantity</th>
-                <th className="d-none">Total</th>
+                <th >Quantity</th>
+                <th >Total</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -193,8 +181,8 @@ export default function Cart() {
                   </td>
                   <td>{item.name}</td>
                   <td>Rs {item.price}</td>
-                  <td className="d-none">{item.quantity}</td>
-                  <td className="d-none">{item.quantity * item.price}</td>
+                  <td >{item.quantity}</td>
+                  <td >{item.quantity * item.price}</td>
                   <td>
                     <Button
                       className="disappear-btn"
