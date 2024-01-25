@@ -29,12 +29,6 @@ export default function ProductDetail() {
   //const activeTab = useSelector((state) => state.activeTab);
   // Fetch product data based on id
   useEffect(() => {
-    // Choose the product array based on the activeTab
-    //const productsArray = activeTab === "newArrival" ? PRODUCTS : bestSelling;
-    // Choose the product array based on the activeTab
-    //const productsArray =
-    // activeTab === "newArrival" ? PRODUCTS : bestSelling;
-
     const singleProduct = [...PRODUCTS, ...bestSelling].find(
       (item) => item.id === id
     );
@@ -46,12 +40,10 @@ export default function ProductDetail() {
         setProduct(singleProduct);
         setActiveImage(singleProduct.image);
         setActiveTab(singleProduct.description);
-        console.log("activeTab:", activeTab);
-        console.log("id:", id);
+      
       }
     }, 1000);
-    console.log("activeTab:", activeTab);
-    console.log("singleProduct", singleProduct);
+ 
   }, [id, activeTab]);
 
   const dispatch = useDispatch();
@@ -93,11 +85,6 @@ export default function ProductDetail() {
               alt="Sample"
               src={activeImage}
               className="img-fluid Pdmain-image"
-              // style={{
-              //   height: "100%",
-              //   width: "100%",
-              //   objectFit: "cover",
-              // }}
             />
             <Row className="flex flex-row justify-between h-24 mt-5 p-5">
               {product.multipleimages &&
@@ -107,9 +94,6 @@ export default function ProductDetail() {
                       src={image}
                       alt=""
                       className="img-fluid smPd-image"
-                      // style={{
-                      //   objectFit: "cover",
-                      // }}
                       onClick={() => updateActiveImage(image)}
                     />
                   </Col>
@@ -166,41 +150,22 @@ export default function ProductDetail() {
           )}
           <Row className="flex flex-row items-center gap-12">
             <Col xs={4} className="flex flex-row items-center">
-              {/* <Button
-                variant="light"
-                className="py-2 px-5 rounded-lg text-violet-800 text-3xl"
-                // onClick={() => setAmount((prev) => prev - 1)}
-              >
-                -
-              </Button>
-              <span className="py-4 px-6 rounded-lg">{"amount"}</span>
-              <Button
-                variant="light"
-                className="py-2 px-4 rounded-lg text-violet-800 text-3xl"
-                // onClick={() => setAmount((prev) => prev + 1)}
-              >
-                +
-              </Button> */}
-            </Col>
-
-            {/* <br />
-            <h6>Total: Rs {calculateTotalPrice()}</h6>
-            <Button
-              variant="violet"
-              className="text-white font-semibold py-3 px-16 rounded-xl h-full"
-            >
-              Add to Cart
-            </Button> */}
-
-            {/* add */}
-            <ButtonGroup>
+              <ButtonGroup>
                 <Button onClick={DecQuantity}>-</Button>
                 <Button>{quantity}</Button>
                 <Button onClick={AddQuantity}>+</Button>
               </ButtonGroup>
               <br />
-              <Button onClick={handleAddToCart}>Add to Cart</Button>
+              <br />
+              <Button
+                variant="violet"
+                className="text-white font-semibold py-3 px-16 rounded-xl h-full"
+                onClick={handleAddToCart}
+              >
+                Add to Cart
+              </Button>
               <h6>Total: Rs {calculateTotalPrice()}</h6>
+            </Col>
           </Row>
         </Col>
       </Row>

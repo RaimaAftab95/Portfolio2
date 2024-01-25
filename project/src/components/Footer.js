@@ -6,8 +6,6 @@ import ScrollToTop from "./ScrollToTop";
 function Footer() {
   return (
     <div>
-      {/* <div className="sticky-footer">
-      <div className="footer-content"> */}
       <footer className="mt-5">
         <Container fluid>
           <Container className="pt-5 pb-5">
@@ -83,23 +81,6 @@ function Footer() {
             </Row>
 
             <div className="border-top">
-              {/* <Row className="d-flex justify-content-center">
-                <Col>
-                  <span className="copyright footer-text">
-                    ©2022Finate. Made with
-                    <i className="fas fa-heart"></i> by
-                  </span>
-                </Col>
-                <Col className="mt-2">
-                  <a
-                    target="_blank"
-                    className="codefooter"
-                    href="https://themeforest.net/user/codecarnival"
-                  >
-                    Codecarnival.
-                  </a>
-                </Col>
-              </Row> */}
               <Row className="d-flex justify-content-center mt-5">
                 <Col sm={6} md={6}>
                   <p className="copyright footer-text">
@@ -119,8 +100,6 @@ function Footer() {
         </Container>
       </footer>
     </div>
-    // </div>
-    // </div>
   );
 }
 

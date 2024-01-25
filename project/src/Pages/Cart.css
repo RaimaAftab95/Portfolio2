@@ -2,3 +2,16 @@
     min-height: 50vh;
     margin-top: 100px;
 }
+.order-info-cardimg {
+    max-height:100px;
+    width: 50%;
+    object-fit:cover;
+}
+
+.cart-table-img {
+max-height:50px;
+width:50px;
+object-fit:cover
+  }
+
+ 

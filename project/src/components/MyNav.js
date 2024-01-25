@@ -18,8 +18,6 @@ function MyNavbarT() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleClick = () => {
-    // alert();
-    // console.log("user nav",user);
     if (user?.name) {
       console.log("if cond", user.name);
       dispatch(logoutUser());
@@ -48,7 +46,6 @@ function MyNavbarT() {
 
   return (
     <div className="margin-top">
-      {/* color="faded" light   color="light" light expand="md"*/}
       <Navbar className="nav-bg-color" expand="md">
         <NavbarBrand tag={Link} to="/" className="me-auto">
           <img className="" src="/BOSHOP images/nav-logo.svg" alt="logo" />

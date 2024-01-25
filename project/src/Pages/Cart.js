@@ -350,19 +350,16 @@ export default function Cart() {
                   <img
                     alt="Sample"
                     src={item.image}
-                    className="img-fluid"
-                    style={{
-                      maxHeight: "100px",
-                      width: "50%",
-                      objectFit: "cover",
-                    }}
+                    className="img-fluid order-info-cardimg"
                   />
                   <CardBody>
                     <CardTitle tag="h6">{item.name}</CardTitle>
                     <CardSubtitle className="mb-2 text-muted" tag="h6">
                       Rs {item.price}
                     </CardSubtitle>
-                    <CardText className="d-none">Quantity:{item.quantity}</CardText>
+                    <CardText className="d-none">
+                      Quantity:{item.quantity}
+                    </CardText>
                   </CardBody>
                 </Card>
               ))}
@@ -415,12 +412,7 @@ export default function Cart() {
                     <img
                       alt="Sample"
                       src={item.image}
-                      className="img-fluid"
-                      style={{
-                        maxHeight: "50px",
-                        width: "50px",
-                        objectFit: "cover",
-                      }}
+                      className="img-fluid cart-table-img"
                     />
                   </td>
                   <td>{item.name}</td>

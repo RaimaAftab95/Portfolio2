@@ -57,7 +57,6 @@ export default class MultipleItems extends Component {
                 <CardTitle>{product.name}</CardTitle>
                 <CardText>{product.description}</CardText>
                 <CardText>{`Price: $${product.price}`}</CardText>
-                {/* Add other product details as needed */}
               </CardBody>
             </Card>
           ))}

@@ -38,12 +38,12 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-      setProductList(PRODUCTS);
+      //setProductList(PRODUCTS);
       // Set the product list based on the active tab
-      //setProductList(tab === "newArrival" ? PRODUCTS : bestSelling);
+      setProductList(activeTab === "newArrival" ? PRODUCTS : bestSelling);
     }, 1000);
   }, [activeTab]);
-  // activeTab remove from array dependency
+
   // handle tabs
   const handleTabChange = (tab) => {
     if (tab !== activeTab) {
@@ -110,12 +110,7 @@ export default function Home() {
                 <img
                   alt="Sample"
                   src={item.image}
-                  className="img-fluid zoom-card-image"
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "cover",
-                  }}
+                  className="img-fluid zoom-card-image card-image-100"
                 />
                 <CardBody>
                   <CardTitle tag="h5">{item.name}</CardTitle>
