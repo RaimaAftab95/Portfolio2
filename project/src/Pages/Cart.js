@@ -165,9 +165,10 @@ export default function Cart() {
         <>
           <h3 className="heading">Shopping Cart</h3>
           {loading ? (
-            <Spinner color="primary" className="my-spinner">
-              Loading...
-            </Spinner>
+            <div className="my-spinner"><Spinner color="primary" className="">
+            Loading...
+          </Spinner></div>
+            
           ) : null}
           <Table responsive className="p-5">
             <thead>
