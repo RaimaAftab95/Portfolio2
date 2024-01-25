@@ -23,10 +23,6 @@
   text-decoration: none!important;
   margin-right: 30px;
   margin-top: 10px; 
-  /* padding-top: 100px!important;
-  margin-top: 20px!important;
-  margin-right: 90px;
-  text-align: left!important; */
 }
 
   /* Add a media query to show the hamburger icon on small screens */
@@ -87,3 +83,9 @@ transition: all 0.4s;
   margin: 0 auto!important;
   } */
 }
+.nav-icon-color{
+color: #ffe115!important;
+}
+.nav-icon-color:hover{
+  color:#2d3a4b!important;
+  }

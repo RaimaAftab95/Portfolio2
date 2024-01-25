@@ -103,7 +103,7 @@ function MyNavbarT() {
             <NavItem>
               <Link
                 onClick={handleClick}
-                className="nav_link text-color"
+                className="nav_link text-color nav-icon-color"
                 to="/login"
               >
                 <i className="fa-solid fa-user"></i>
@@ -111,7 +111,7 @@ function MyNavbarT() {
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav_link text-color" to="/cart">
+              <Link className="nav_link text-color nav-icon-color" to="/cart">
                 <i className="fa-solid fa-cart-shopping"></i>Cart
               </Link>
             </NavItem>

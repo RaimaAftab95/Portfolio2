@@ -3,15 +3,17 @@
     color: #ffff;
     border-radius:none;
     width: 100%; */
-    padding: 20px 40px!important;
+    /* padding: 20px 40px!important; */
+    padding: 10px 20px!important;
     margin-top: 30px!important;
     background-color:  #ffe115!important;
     color:#2d3a4b!important;
-    border-radius: 5px!important;
+    border-radius: 0px!important;
     cursor: pointer!important;
     border: none!important;
     transition: all 0.3s ease-in!important;
     font-family: Poppins!important;
+    width: 100%;
 }
 .add-to-cart-btn:hover {
     /* background-color:#ffe115!important; */
@@ -20,12 +22,18 @@
 }
 
 .arrival-block .overlay {
-    background: rgba(255,255,255,0.5);
+   /* background: rgba(255,255,255,0.5)!important; */
+   background: yellow;
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0px;
     top: 0px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in; 
+}
+
+.arrival-block:hover .overlay {
     opacity: 0;
 }
 .about-us-con h3 {
@@ -92,4 +100,10 @@ p {
 width:50px;
 height:50px;
 }
- 
+.zoom-card-image {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .zoom-card-image:hover {
+    transform: scale(1.1) translate(5px, -5px);
+  }

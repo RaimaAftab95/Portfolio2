@@ -83,7 +83,7 @@ function Footer() {
             </Row>
 
             <div className="border-top">
-              <Row className="d-flex justify-content-center">
+              {/* <Row className="d-flex justify-content-center">
                 <Col>
                   <span className="copyright footer-text">
                     ©2022Finate. Made with
@@ -99,17 +99,17 @@ function Footer() {
                     Codecarnival.
                   </a>
                 </Col>
-              </Row>
-              <Row>
-                <Col md={6}>
+              </Row> */}
+              <Row className="d-flex justify-content-center mt-5">
+                <Col sm={6} md={6}>
                   <p className="copyright footer-text">
-                    © 2024 BoShop All right reserved.{" "}
+                    © 2024 BoShop All right reserved.
                     <a className="codefooter" href="https://webicode.com/">
                       webicode
                     </a>
                   </p>
                 </Col>
-                <Col md={6} className="text-right">
+                <Col sm={6} md={6} className="text-right">
                   <img src="/BOSHOP images/card-icon.png" alt="" />
                 </Col>
               </Row>

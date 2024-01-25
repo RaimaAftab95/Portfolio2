@@ -38,60 +38,56 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-     setProductList(PRODUCTS);
+      setProductList(PRODUCTS);
       // Set the product list based on the active tab
-      //setProductList(activeTab === "newArrival" ? PRODUCTS : bestSelling);
+      //setProductList(tab === "newArrival" ? PRODUCTS : bestSelling);
     }, 1000);
-  }, [ activeTab]);
+  }, [activeTab]);
   // activeTab remove from array dependency
-// handle tabs
-const handleTabChange = (tab) => {
-  //setActiveTab(tab);
-  setLoading(true);
-  setTimeout(() => {
-  setLoading(false);
-  setProductList(tab === "newArrival" ? PRODUCTS : bestSelling);
-  }, 1000);
-};
-
+  // handle tabs
+  const handleTabChange = (tab) => {
+    if (tab !== activeTab) {
+      setActiveTab(tab);
+      setProductList([]);
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setProductList(tab === "newArrival" ? PRODUCTS : bestSelling);
+      }, 1000);
+    }
+  };
 
   const onPressDetails = (id) => {
-    //alert(id);
     navigate("/productDetail/" + id);
-    // navigate("/productDetailtrial/" + id);
   };
   const dispatch = useDispatch();
-  // Addtocart fun call
+
   const handleAddToCart = (product) => {
     console.log("addto cart func");
     dispatch(addToCart(product));
   };
-  
+
   return (
-    // instead of div we wrap in container
     <Container fluid>
       <Slider slides={slidesData} />
       <Container fluid className="mt-5">
         <Nav tabs className="mt-5">
           <NavItem>
-            {/* <NavLink
-              className={activeTab === "newArrival" ? "active" : ""}
+            <NavLink
+              className="active"
               onClick={() => handleTabChange("newArrival")}
-            > */}
-            <NavLink className="active" onClick={() => handleTabChange("newArrival")}>
+            >
               New Arrival
             </NavLink>
           </NavItem>
           <NavItem>
-            {/* <NavLink
-              className={activeTab === "bestSelling" ? "active" : ""}
+            <NavLink
+              className=""
               onClick={() => handleTabChange("bestSelling")}
-            > */}
-            <NavLink className="" onClick={ () => handleTabChange("bestSelling")}>
+            >
               Best Selling
             </NavLink>
           </NavItem>
-          {/* Add more tabs if needed */}
         </Nav>
       </Container>
       <section>
@@ -114,7 +110,7 @@ const handleTabChange = (tab) => {
                 <img
                   alt="Sample"
                   src={item.image}
-                  className="img-fluid"
+                  className="img-fluid zoom-card-image"
                   style={{
                     height: "100%",
                     width: "100%",
@@ -140,7 +136,6 @@ const handleTabChange = (tab) => {
                   </Button>
                 </CardBody>
               </Card>
-              {/* </Link> */}
             </Col>
           ))}
         </Row>
@@ -197,25 +192,22 @@ const handleTabChange = (tab) => {
               <ul className="order-info d-flex">
                 <li>
                   <img
-                    className="img-fluid"
+                    className="img-fluid image-50"
                     src="/BOSHOP images/sewing.png"
-                    style={{ width: "50px", height: "50px" }}
                   />
                   <h5>Fully Customizability</h5>
                 </li>
                 <li>
                   <img
-                    className="img-fluid"
+                    className="img-fluid image-50"
                     src="/BOSHOP images/handmade.png"
-                    style={{ width: "50px", height: "50px" }}
                   />
                   <h5>Fully Hand Made</h5>
                 </li>
                 <li>
                   <img
-                    className="img-fluid"
+                    className="img-fluid image-50"
                     src="/BOSHOP images/shirt.png"
-                    style={{ width: "50px", height: "50px" }}
                   />
                   <h5>Elegant Looks</h5>
                 </li>
@@ -246,45 +238,57 @@ const handleTabChange = (tab) => {
         <Container fluid>
           <Row>
             <Col>
-            <h4></h4>
-            <img></img>
-            <img></img>
-            <img></img>
-            <img></img>
+              <h4></h4>
+              <img></img>
+              <img></img>
+              <img></img>
+              <img></img>
             </Col>
           </Row>
         </Container>
       </section>
       <section className="shipment">
-      <Container>
-        <Row>
-          <Col xs="12" sm="6" md="3">
-            <div className="text-center">
-            <img className="img-fluid image-50" src="/BOSHOP images/freeshipping.png"></img>
-              <h4>Free Shipment Over 50$</h4>
-            </div>
-          </Col>
-          <Col xs="12" sm="6" md="3">
-            <div className="text-center">
-            <img className="img-fluid image-50" src="/BOSHOP images/onlinesupport.png"></img>
-              <h4>24/7 online Support</h4>
-            </div>
-          </Col>
-          <Col xs="12" sm="6" md="3">
-            <div className="text-center">
-            <img className="img-fluid image-50" src="/BOSHOP images/credit-card.png"></img>
-              <h4>100% Secure Payment</h4>
-            </div>
-          </Col>
-          <Col xs="12" sm="6" md="3">
-            <div className="text-center">
-              <img className="img-fluid image-50" src="/BOSHOP images/fast-delivery.png"></img>
-              <h4>World Wide Shipment</h4>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+        <Container>
+          <Row>
+            <Col xs="12" sm="6" md="3">
+              <div className="text-center">
+                <img
+                  className="img-fluid image-50"
+                  src="/BOSHOP images/freeshipping.png"
+                ></img>
+                <h4>Free Shipment Over 50$</h4>
+              </div>
+            </Col>
+            <Col xs="12" sm="6" md="3">
+              <div className="text-center">
+                <img
+                  className="img-fluid image-50"
+                  src="/BOSHOP images/onlinesupport.png"
+                ></img>
+                <h4>24/7 online Support</h4>
+              </div>
+            </Col>
+            <Col xs="12" sm="6" md="3">
+              <div className="text-center">
+                <img
+                  className="img-fluid image-50"
+                  src="/BOSHOP images/credit-card.png"
+                ></img>
+                <h4>100% Secure Payment</h4>
+              </div>
+            </Col>
+            <Col xs="12" sm="6" md="3">
+              <div className="text-center">
+                <img
+                  className="img-fluid image-50"
+                  src="/BOSHOP images/fast-delivery.png"
+                ></img>
+                <h4>World Wide Shipment</h4>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
       <Carosal className="m-5" />
     </Container>

@@ -13,12 +13,12 @@ import {
   Col,
   ButtonGroup,
 } from "reactstrap";
-import { PRODUCTS,  bestSelling  } from "../components/data";
+import { PRODUCTS, bestSelling } from "../components/data";
 import { addToCart } from "./redux/cart";
 import { useSelector, useDispatch } from "react-redux";
+import "./ProductDetail.css";
 
 export default function ProductDetail() {
-
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
@@ -26,42 +26,39 @@ export default function ProductDetail() {
   const [activeImage, setActiveImage] = useState("");
   const [activeTab, setActiveTab] = useState("newArrival");
   // activeTab is retrieved from the Redux state,
-  //const activeTab = useSelector((state) => state.activeTab); 
+  //const activeTab = useSelector((state) => state.activeTab);
   // Fetch product data based on id
   useEffect(() => {
-
     // Choose the product array based on the activeTab
     //const productsArray = activeTab === "newArrival" ? PRODUCTS : bestSelling;
-// Choose the product array based on the activeTab
-const productsArray =
-activeTab === "newArrival" ? PRODUCTS : bestSelling;
+    // Choose the product array based on the activeTab
+    //const productsArray =
+    // activeTab === "newArrival" ? PRODUCTS : bestSelling;
 
-const singleProduct = productsArray.find((item) => item.id === id);
-console.log("singleProduct", singleProduct);
-    //const singleProduct = PRODUCTS.find((item) => item.id === id);
+    const singleProduct = [...PRODUCTS, ...bestSelling].find(
+      (item) => item.id === id
+    );
+    console.log("singleProduct", singleProduct);
 
     setTimeout(() => {
       setLoading(false);
       if (singleProduct) {
         setProduct(singleProduct);
         setActiveImage(singleProduct.image);
-        setActiveTab(singleProduct.description)
- console.log("activeTab:", activeTab);
-    console.log("id:", id);
+        setActiveTab(singleProduct.description);
+        console.log("activeTab:", activeTab);
+        console.log("id:", id);
       }
     }, 1000);
     console.log("activeTab:", activeTab);
-    console.log("id:", id);
-    console.log("id", id);
     console.log("singleProduct", singleProduct);
   }, [id, activeTab]);
-  // id in array dependency [id, activeTab]);
 
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     console.log("addto cart func");
     dispatch(addToCart({ ...product, quantity }));
-    console.log("product detail page: product quantity",product, quantity);
+    console.log("product detail page: product quantity", product, quantity);
   };
 
   // Calculate total price based on quantity
@@ -85,7 +82,6 @@ console.log("singleProduct", singleProduct);
     setQuantity(quantity + 1);
   };
 
-  // Return the JSX structure
   return (
     <Container>
       <h3 className="text-center mt-3 mb-4">Product Details</h3>
@@ -93,16 +89,15 @@ console.log("singleProduct", singleProduct);
       <Row className="justify-content-center">
         <Col xs="12" sm="4">
           <Card>
-            
             <img
               alt="Sample"
               src={activeImage}
-              className="img-fluid"
-              style={{
-                height: "100%",
-                width: "100%",
-                objectFit: "cover",
-              }}
+              className="img-fluid Pdmain-image"
+              // style={{
+              //   height: "100%",
+              //   width: "100%",
+              //   objectFit: "cover",
+              // }}
             />
             <Row className="flex flex-row justify-between h-24 mt-5 p-5">
               {product.multipleimages &&
@@ -111,10 +106,10 @@ console.log("singleProduct", singleProduct);
                     <img
                       src={image}
                       alt=""
-                      className="img-fluid"
-                      style={{
-                        objectFit: "cover",
-                      }}
+                      className="img-fluid smPd-image"
+                      // style={{
+                      //   objectFit: "cover",
+                      // }}
                       onClick={() => updateActiveImage(image)}
                     />
                   </Col>
@@ -126,32 +121,29 @@ console.log("singleProduct", singleProduct);
                 Rs {product.price}
               </CardSubtitle>
               <CardText>{product.description}</CardText>
-              <ButtonGroup>
+              {/* <ButtonGroup>
                 <Button onClick={DecQuantity}>-</Button>
                 <Button>{quantity}</Button>
                 <Button onClick={AddQuantity}>+</Button>
               </ButtonGroup>
               <br />
-              <Button onClick={handleAddToCart}>Add to Cart</Button>
+              <Button onClick={handleAddToCart}>Add to Cart</Button> */}
             </CardBody>
           </Card>
         </Col>
-        {/* Add other Col components as needed */}
-        {/* add col */}
 
         <Col className="flex flex-col gap-4 lg:w-2/4">
           <div>
             <span className=" text-violet-600 font-semibold">
               Rs {product.price}
             </span>
-            <h1 className="text-3xl font-bold">Nike Invincible 3</h1>
+            {/* <h1 className="text-3xl font-bold">Nike Invincible 3</h1> */}
             <h1 className="text-3xl font-bold">{product.name}</h1>
           </div>
           <p className="text-gray-700">{product.description}</p>
-          <h6 className="text-2xl font-semibold">$ 199.00</h6>
+          <h6 className="text-2xl font-semibold">{product.price}</h6>
 
-          
-          {/* Display Rating */}
+          {/*Rating */}
           <div>
             {Array.from({ length: product.rating }, (_, index) => (
               <span key={index} role="img" aria-label="star">
@@ -160,7 +152,7 @@ console.log("singleProduct", singleProduct);
             ))}
           </div>
 
-          {/* Display Reviews */}
+          {/*Reviews */}
           {product.review && product.review.length > 0 && (
             <div>
               <h6>Reviews:</h6>
@@ -174,7 +166,7 @@ console.log("singleProduct", singleProduct);
           )}
           <Row className="flex flex-row items-center gap-12">
             <Col xs={4} className="flex flex-row items-center">
-              <Button
+              {/* <Button
                 variant="light"
                 className="py-2 px-5 rounded-lg text-violet-800 text-3xl"
                 // onClick={() => setAmount((prev) => prev - 1)}
@@ -188,29 +180,31 @@ console.log("singleProduct", singleProduct);
                 // onClick={() => setAmount((prev) => prev + 1)}
               >
                 +
-              </Button>
+              </Button> */}
             </Col>
 
-            <br />
+            {/* <br />
             <h6>Total: Rs {calculateTotalPrice()}</h6>
             <Button
               variant="violet"
               className="text-white font-semibold py-3 px-16 rounded-xl h-full"
             >
               Add to Cart
-            </Button>
+            </Button> */}
+
+            {/* add */}
+            <ButtonGroup>
+                <Button onClick={DecQuantity}>-</Button>
+                <Button>{quantity}</Button>
+                <Button onClick={AddQuantity}>+</Button>
+              </ButtonGroup>
+              <br />
+              <Button onClick={handleAddToCart}>Add to Cart</Button>
+              <h6>Total: Rs {calculateTotalPrice()}</h6>
           </Row>
         </Col>
-        {/* other col close */}
       </Row>
 
-      {/* add tabs */}
-      {/* <Row>
-        <Col sm="12">
-          <Button onClick={() => setActiveTab("newArrival")}>New Arrival</Button>
-          <Button onClick={() => setActiveTab("bestSelling")}>Best Selling</Button>
-        </Col>
-      </Row> */}
       {loading ? <Spinner color="primary">Loading...</Spinner> : null}
     </Container>
   );
