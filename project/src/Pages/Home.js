@@ -98,8 +98,13 @@ export default function Home() {
             faucibus maximus vehicula.
           </span>
         </div>
-        <h3 className="mt-5">Products List</h3>
-        {loading ? <Spinner color="primary">Loading...</Spinner> : null}
+        {/* <h3 className="mt-5 text-center">Products List</h3> */}
+        {loading ? (
+            <div className="my-spinner"><Spinner color="primary" className="">
+            Loading...
+          </Spinner></div>
+            
+          ) : null}
         <Row>
           {productList.map((item, index) => (
             <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">

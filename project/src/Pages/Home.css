@@ -113,3 +113,7 @@ height:50px;
   .zoom-card-image:hover {
     transform: scale(1.1) translate(5px, -5px);
   }
+  .my-spinner {
+    margin: auto!important;
+    text-align: center!important;
+}
