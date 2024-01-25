@@ -19,7 +19,7 @@
     padding-top: 2px;
 }
 .text-color{
-  color: #212529;
+  color: #2d3a4b;
   text-decoration: none!important;
   margin-right: 30px;
   margin-top: 10px; 
@@ -32,11 +32,11 @@
     }
   }
   .hamburger-react div {
-    background-color: #2d3a4b;; 
+    background-color: #2d3a4b; 
   }
 .hamburger-react {
     padding: 10px;
-    border: 2px solid #2d3a4b;; 
+    border: 2px solid #2d3a4b;
     border-radius: 4px;
   }
   
