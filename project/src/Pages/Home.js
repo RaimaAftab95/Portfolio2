@@ -113,7 +113,7 @@ export default function Home() {
           {productList.map((item, index) => (
             <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
               <Card
-                className="arrival-block p-2 mt-4"
+                className="p-2 mt-4"
                 onClick={() => onPressDetails(item.id)}
               >
                 <img

@@ -14,11 +14,17 @@
   height: 80px!important;
   width: auto!important;
   cursor: pointer;
-  border:1px solid #2d3a4b;
+  /* border:1px solid #2d3a4b; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 0 10px 0 #ffe115;
+  transition: transform 0.3s ease-in-out;
+  }
+  .smPd-image:hover {
+    transform: scale(1.1) translate(5px, -5px);
   }
   .detail-card
   {
-    border:2px solid #2d3a4b!important;
+    /* border:2px solid #2d3a4b!important; */
     box-shadow: 0 0 10px 0 #ffe115;
   }
  
@@ -28,4 +34,25 @@
   text-transform: uppercase;
   text-align: center!important; 
   margin-bottom: 10px;
+}
+/* .pd-border {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border:2px solid #2d3a4b ;
+} */
+
+.add-to-cart-btn{
+  padding: 10px 20px!important;
+  margin-top: 30px!important;
+  background-color:  #ffe115!important;
+  color:#2d3a4b!important;
+  border-radius: 0px!important;
+  cursor: pointer!important;
+  border: none!important;
+  transition: all 0.3s ease-in!important;
+  font-family: Poppins!important;
+  width: 100%;
+}
+.add-to-cart-btn:hover {
+  background-color:#2d3a4b!important;
+  color: #ffe115!important;  
 }

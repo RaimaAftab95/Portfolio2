@@ -86,7 +86,7 @@ export default function ProductDetail() {
       <h3 className="heading">Product Details</h3>
       {loading ? <Spinner color="primary">Loading...</Spinner> : null}
       <Row className="justify-content-center">
-        <Col xs="12" sm="4">
+        <Col xs="12" sm="4" lg="6">
           <Card className="detail-card">
             <img
               alt="Sample"
@@ -123,16 +123,12 @@ export default function ProductDetail() {
           </Card>
         </Col>
 
-        <Col className="flex flex-col gap-4 lg:w-2/4">
+        <Col className="flex flex-col gap-4 lg:w-2/4 p-lg-5 p-4">
           <div>
-            {/* <span className=" text-violet-600 font-semibold">
-              Rs {product.price}
-            </span> */}
-            {/* <h1 className="text-3xl font-bold">Nike Invincible 3</h1> */}
             <h1 className="text-3xl font-bold">{product.name}</h1>
           </div>
           <p className="text-gray-700">{product.description}</p>
-          <h6 className="text-2xl font-semibold">{product.price}</h6>
+          <h6 className="text-2xl font-semibold">Rs{product.price}</h6>
 
           {/*Rating */}
           <div>
@@ -156,28 +152,27 @@ export default function ProductDetail() {
             </div>
           )}
           <Row className="flex flex-row items-center gap-12">
-            <Col xs={4} className="flex flex-row items-center">
-              <ButtonGroup>
-                <Button onClick={DecQuantity}>-</Button>
-                <Button>{quantity}</Button>
-                <Button onClick={AddQuantity}>+</Button>
+            <Col xs={6} className="flex flex-row items-center">
+              <ButtonGroup >
+                <Button className="add-to-cart-btn" onClick={DecQuantity}>-</Button>
+                <Button className="add-to-cart-btn">{quantity}</Button>
+                <Button className="add-to-cart-btn" onClick={AddQuantity}>+</Button>
               </ButtonGroup>
               <br />
               <br />
               <Button
-                variant="violet"
-                className="text-white font-semibold py-3 px-16 rounded-xl h-full"
+                className="add-to-cart-btn w-100"
                 onClick={handleAddToCart}
               >
-                Add to Cart
+               <i class="fa-solid fa-cart-shopping"></i> Add to Cart
               </Button>
-              <h6>Total: Rs {calculateTotalPrice()}</h6>
+              <h6 className="mt-5">Total Price: Rs {calculateTotalPrice()}</h6>
             </Col>
           </Row>
         </Col>
       </Row>
-
-      {loading ? <Spinner color="primary">Loading...</Spinner> : null}
+{/* 
+   font-semibold py-3 px-16 rounded-xl h-full    {loading ? <Spinner color="primary">Loading...</Spinner> : null} */}
     </Container>
   );
 }
