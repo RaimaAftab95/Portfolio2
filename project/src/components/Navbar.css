@@ -30,6 +30,11 @@
     .hide-on-lg {
       display: block;
     }
+    .nav_link{
+      padding-top: 35px!important;
+      /* margin-top: 50px!important; */
+      /* margin-right: 10px; */
+    }
   }
   .hamburger-react div {
     background-color: #2d3a4b; 
@@ -43,8 +48,6 @@
   
 /* navlink hover line */
 .nav_link{
-  /* margin-top: 5px;
-  float: right; */
 text-align: center!important;
 color:#2d3a4b;
 font-size: 14px;
@@ -69,20 +72,6 @@ transition: all 0.4s;
   opacity: 1;
 }
 
-@media (max-width: 767px) {
-  .nav_link {
-    margin-right: 10px;
-    margin-top: 10px; 
-  }
-  /* .navbar-brand {
-    text-align: center; 
-    width: 100%; 
-  } */
-  /* .logo-img {
-   display: block!important;
-  margin: 0 auto!important;
-  } */
-}
 .nav-icon-color{
 color: #ffe115!important;
 }

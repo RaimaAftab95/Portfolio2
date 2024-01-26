@@ -82,12 +82,12 @@ export default function ProductDetail() {
   };
 
   return (
-    <Container>
-      <h3 className="text-center mt-3 mb-4">Product Details</h3>
+    <Container className="topmargin">
+      <h3 className="heading">Product Details</h3>
       {loading ? <Spinner color="primary">Loading...</Spinner> : null}
       <Row className="justify-content-center">
         <Col xs="12" sm="4">
-          <Card>
+          <Card className="detail-card">
             <img
               alt="Sample"
               src={activeImage}
@@ -107,11 +107,11 @@ export default function ProductDetail() {
                 ))}
             </Row>
             <CardBody>
-              <CardTitle tag="h5">{product.name}</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
+              {/* <CardTitle tag="h5">{product.name}</CardTitle> */}
+              {/* <CardSubtitle className="mb-2 text-muted" tag="h6">
                 Rs {product.price}
-              </CardSubtitle>
-              <CardText>{product.description}</CardText>
+              </CardSubtitle> */}
+              {/* <CardText>{product.description}</CardText> */}
               {/* <ButtonGroup>
                 <Button onClick={DecQuantity}>-</Button>
                 <Button>{quantity}</Button>
@@ -125,9 +125,9 @@ export default function ProductDetail() {
 
         <Col className="flex flex-col gap-4 lg:w-2/4">
           <div>
-            <span className=" text-violet-600 font-semibold">
+            {/* <span className=" text-violet-600 font-semibold">
               Rs {product.price}
-            </span>
+            </span> */}
             {/* <h1 className="text-3xl font-bold">Nike Invincible 3</h1> */}
             <h1 className="text-3xl font-bold">{product.name}</h1>
           </div>

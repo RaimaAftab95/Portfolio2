@@ -1,8 +1,31 @@
+.topmargin{
+  margin-top: 60px;
+}
 .Pdmain-image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* border:2px solid #2d3a4b; */
+    /* max-width: 100%;
+    height: auto; */
   }
   .smPd-image {
-    object-fit: cover;
+  object-fit: cover!important;
+  height: 80px!important;
+  width: auto!important;
+  cursor: pointer;
+  border:1px solid #2d3a4b;
   }
+  .detail-card
+  {
+    border:2px solid #2d3a4b!important;
+    box-shadow: 0 0 10px 0 #ffe115;
+  }
+ 
+.heading{
+  color: #2d3a4b;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center!important; 
+  margin-bottom: 10px;
+}

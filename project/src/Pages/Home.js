@@ -74,7 +74,9 @@ export default function Home() {
         <Nav tabs className="mt-5">
           <NavItem>
             <NavLink
-              className="active"
+              className={
+                activeTab === "newArrival" ? "active darkcolor" : "tabcolor"
+              }
               onClick={() => handleTabChange("newArrival")}
             >
               New Arrival
@@ -82,7 +84,9 @@ export default function Home() {
           </NavItem>
           <NavItem>
             <NavLink
-              className=""
+              className={
+                activeTab === "bestSelling" ? "active darkcolor" : "tabcolor"
+              }
               onClick={() => handleTabChange("bestSelling")}
             >
               Best Selling
@@ -98,7 +102,6 @@ export default function Home() {
             faucibus maximus vehicula.
           </span>
         </div>
-        {/* <h3 className="mt-5 text-center">Products List</h3> */}
         {loading ? (
           <div className="my-spinner">
             <Spinner color="primary" className="">
@@ -110,7 +113,7 @@ export default function Home() {
           {productList.map((item, index) => (
             <Col key={`${index}`} xs="12" sm="4" md="4" lg="2">
               <Card
-                className="arrival-block p-2"
+                className="arrival-block p-2 mt-4"
                 onClick={() => onPressDetails(item.id)}
               >
                 <img
@@ -144,7 +147,10 @@ export default function Home() {
       <Container fluid className="mt-5">
         <Row>
           <Col sm={12} xs={12} md={6} lg={6}>
-            <img className="img-fluid about-us-img" src="/BOSHOP images/history-img.jpg" />
+            <img
+              className="img-fluid about-us-img"
+              src="/BOSHOP images/history-img.jpg"
+            />
           </Col>
           <Col sm={12} xs={12} md={6} lg={6}>
             <div class="about-us-con mx-5">
@@ -247,7 +253,7 @@ export default function Home() {
       <section className="shipment">
         <Container>
           <Row>
-            <Col xs="12" sm="6" md="3" >
+            <Col xs="12" sm="6" md="3">
               <div className="text-center">
                 <img
                   className="img-fluid image-50"

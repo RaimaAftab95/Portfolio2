@@ -139,11 +139,11 @@ export default function Cart() {
                 `Your order # ${randomOrderNumber} is in the process. Thanks for shopping`
               );
             }}
-            color="primary"
+             className="checkout-btn"
           >
             Place Order
           </Button>
-          <Button onClick={() => setModalOpen(false)} color="secondary">
+          <Button onClick={() => setModalOpen(false)} className="checkout-btn">
             Cancel
           </Button>
         </ModalFooter>
@@ -188,22 +188,7 @@ export default function Cart() {
                 </tr>
               ))}
             </tbody>
-            {/* <tfoot>
-              <tr>
-                <td colSpan="3" className="text-right">
-                  TotalQuantity:
-                </td>
-                <td>{getTotalnew().totalQuantity}</td>
-                <td colSpan="2"></td>
-              </tr>
-              <tr>
-                <td colSpan="3" className="text-right">
-                  Grand Total:
-                </td>
-                <td>Rs {getTotalnew().totalPrice}</td>
-                <td colSpan="2"></td>
-              </tr>
-            </tfoot> */}
+          
           </Table>
 
           {/* Summary Section */}
@@ -231,14 +216,9 @@ export default function Cart() {
               </Button>
             </Col>
           </Row>
-          {/* <Button onClick={() => setModalOpen(true)}>Checkout</Button> */}
-          {/* <Button onClick={() => setModalOpen(!modalOpen)}>Checkout</Button>
-          <Button className="disappear-btn" onClick={() => dispatch(emptyCart())}>
-            <i class="fa-solid fa-trash cart-deleteall-btn"></i>
-          </Button> */}
         </>
       ) : (
-        <p>Please login to view the Cart</p>
+        <p className="text-center bold">Please login to view the Cart</p>
       )}
     </Container>
   );
