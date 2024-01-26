@@ -41,16 +41,14 @@ export default function ProductDetail() {
         setProduct(singleProduct);
         setActiveImage(singleProduct.image);
         setActiveTab(singleProduct.description);
-      
       }
     }, 1000);
- 
   }, [id, activeTab]);
 
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     console.log("addto cart func");
-    dispatch(addToCart({ ...product, quantity}));
+    dispatch(addToCart({ ...product, quantity }));
   };
 
   // Calculate total price based on quantity
@@ -66,7 +64,7 @@ export default function ProductDetail() {
     if (quantity > 1) {
       setQuantity(quantity - 1);
       console.log("product detail page: product quantity", product, quantity);
-    } else { 
+    } else {
       console.log("Can't go below 1");
       toast.error("Too low quantity");
       console.log("product detail page: product quantity", product, quantity);
@@ -75,10 +73,10 @@ export default function ProductDetail() {
 
   const AddQuantity = () => {
     if (quantity < 25) {
-    setQuantity(quantity + 1);
-  } else {
-    toast.error("Too high quantity out of stock");
-  }
+      setQuantity(quantity + 1);
+    } else {
+      toast.error("Too high quantity out of stock");
+    }
   };
 
   return (
@@ -125,10 +123,11 @@ export default function ProductDetail() {
 
         <Col className="flex flex-col gap-4 lg:w-2/4 p-lg-5 p-4">
           <div>
-            <h1 className="text-3xl font-bold">{product.name}</h1>
+            <h1 className="font-weight-bold">{product.name}</h1>
           </div>
-          <p className="text-gray-700">{product.description}</p>
-          <h6 className="text-2xl font-semibold">Rs{product.price}</h6>
+          <p>DESCRIPTION</p>
+          <p>{product.description}</p>
+          <h4>Rs {product.price}</h4>
 
           {/*Rating */}
           <div>
@@ -138,25 +137,32 @@ export default function ProductDetail() {
               </span>
             ))}
           </div>
-
+<br></br>
+<br></br>
           {/*Reviews */}
           {product.review && product.review.length > 0 && (
             <div>
-              <h6>Reviews:</h6>
+              <h5>Reviews:</h5>
               {product.review.map((review, index) => (
                 <div key={index}>
-                  <p>{review.text}</p>
+                  <p> "{review.text}"</p>
+
                   <span>{`Rating: ${review.rating}`}</span>
+                  <hr></hr>
                 </div>
               ))}
             </div>
           )}
           <Row className="flex flex-row items-center gap-12">
             <Col xs={6} className="flex flex-row items-center">
-              <ButtonGroup >
-                <Button className="add-to-cart-btn" onClick={DecQuantity}>-</Button>
+              <ButtonGroup>
+                <Button className="add-to-cart-btn" onClick={DecQuantity}>
+                  -
+                </Button>
                 <Button className="add-to-cart-btn">{quantity}</Button>
-                <Button className="add-to-cart-btn" onClick={AddQuantity}>+</Button>
+                <Button className="add-to-cart-btn" onClick={AddQuantity}>
+                  +
+                </Button>
               </ButtonGroup>
               <br />
               <br />
@@ -164,15 +170,13 @@ export default function ProductDetail() {
                 className="add-to-cart-btn w-100"
                 onClick={handleAddToCart}
               >
-               <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                <i class="fa-solid fa-cart-shopping"></i> Add to Cart
               </Button>
               <h6 className="mt-5">Total Price: Rs {calculateTotalPrice()}</h6>
             </Col>
           </Row>
         </Col>
       </Row>
-{/* 
-   font-semibold py-3 px-16 rounded-xl h-full    {loading ? <Spinner color="primary">Loading...</Spinner> : null} */}
     </Container>
   );
 }

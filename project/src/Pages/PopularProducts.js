@@ -55,7 +55,7 @@ export default class MultipleItems extends Component {
               <CardImg top width="50%" src={product.image} alt={product.name} />
               <CardBody>
                 <CardTitle>{product.name}</CardTitle>
-                <CardText>{product.description}</CardText>
+                {/* <CardText>{product.description}</CardText> */}
                 <CardText>{`Price: $${product.price}`}</CardText>
               </CardBody>
             </Card>

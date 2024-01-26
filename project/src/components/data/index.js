@@ -2,22 +2,18 @@ export const PRODUCTS = [
   {
     id: "pr-1",
     name: "Faccy T shirt",
-    description: "some short dis",
+    description: "Immerse yourself in premium sound quality with our Wireless Noise-Canceling Headphones. Enjoy crystal-clear audio, comfortable design, and the freedom of wireless connectivity for an unparalleled listening experience.",
     price: 3000,
     image: "/BOSHOP images/item-img-1-1.jpg",
     rating: 5,
-    // we can render revies in listgrp component of reactstrap
-    // we have to use map for multiple images
     review: [
       {
-        text: "abc",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "8",
       },
     ],
     //   absolute path "/images/box7_image.jpg"
     // when i was adding "./images/box7_image.jpg" it was not showing on other page
-
-    // we can also show multiple images like
     multipleimages: [
       "/BOSHOP images/item-img-1-1.jpg",
       "/images/box7_image.jpg",
@@ -31,15 +27,15 @@ export const PRODUCTS = [
     rating: 4,
     review: [
       {
-        text: "review-1",
+        text: "Stylish Smart Thermostat – makes home climate control a breeze!",
         rating: "8",
       },
       {
-        text: "review-2",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "10",
       },
     ],
-    description: "some short dis",
+    description: "Stay fit and connected with our Smart Fitness Tracker. Monitor your daily activities, heart rate, and sleep patterns. The sleek design and intuitive app make it easy to achieve your fitness goals",
     price: 999,
     image: "/BOSHOP images/item-img-1-2-1.jpg",
     multipleimages: [
@@ -55,15 +51,15 @@ export const PRODUCTS = [
     rating: 3,
     review: [
       {
-        text: "review-1",
+        text: "Top-notch Camera Drone – capturing stunning aerial shots effortlessly.",
         rating: "2",
       },
       {
-        text: "review-2",
+        text: "Stylish Smart Thermostat – makes home climate control a breeze!",
         rating: "4",
       },
     ],
-    description: "some short dis",
+    description: "Start your day with the perfect cup of espresso using our Compact Espresso Maker. This space-saving appliance combines style and functionality, allowing you to enjoy rich and flavorful coffee in the comfort of your home.",
     price: 899,
     image: "/BOSHOP images/item-img-1-3.jpg",
     multipleimages: [
@@ -79,15 +75,15 @@ export const PRODUCTS = [
     rating: 2,
     review: [
       {
-        text: "review-1",
+        text: "Top-notch Camera Drone – capturing stunning aerial shots effortlessly.",
         rating: "6",
       },
       {
-        text: "review-2",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "7",
       },
     ],
-    description: "some short dis",
+    description: "Start your day with the perfect cup of espresso using our Compact Espresso Maker. This space-saving appliance combines style and functionality, allowing you to enjoy rich and flavorful coffee in the comfort of your home.",
     price: 799,
     image: "/BOSHOP images/item-img-1-4.jpg",
     multipleimages: [
@@ -103,15 +99,15 @@ export const PRODUCTS = [
     rating: 2,
     review: [
       {
-        text: "review-1",
+        text: "Top-notch Camera Drone – capturing stunning aerial shots effortlessly.",
         rating: "6",
       },
       {
-        text: "review-2",
+        text: "Top-notch Camera Drone – capturing stunning aerial shots effortlessly.",
         rating: "3",
       },
     ],
-    description: "some short dis",
+    description: "Immerse yourself in premium sound quality with our Wireless Noise-Canceling Headphones. Enjoy crystal-clear audio, comfortable design, and the freedom of wireless connectivity for an unparalleled listening experience.",
     price: 599,
     image: "/BOSHOP images/item-img-1-5.jpg",
     multipleimages: [
@@ -127,15 +123,15 @@ export const PRODUCTS = [
     rating: 2,
     review: [
       {
-        text: "review-1",
+        text: "Top-notch Camera Drone – capturing stunning aerial shots effortlessly.",
         rating: "5",
       },
       {
-        text: "review-2",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "5",
       },
     ],
-    description: "some short dis",
+    description: "Start your day with the perfect cup of espresso using our Compact Espresso Maker. This space-saving appliance combines style and functionality, allowing you to enjoy rich and flavorful coffee in the comfort of your home.",
     price: 399,
     image: "/BOSHOP images/item-img-1-6.jpg",
     multipleimages: [
@@ -151,15 +147,15 @@ export const PRODUCTS = [
     rating: 2,
     review: [
       {
-        text: "review-2",
+        text: "Top-notch Camera Drone – capturing stunning aerial shots effortlessly.",
         rating: "6",
       },
       {
-        text: "review-2",
+        text: "Stylish Smart Thermostat – makes home climate control a breeze!",
         rating: "9",
       },
     ],
-    description: "some short dis",
+    description: "Start your day with the perfect cup of espresso using our Compact Espresso Maker. This space-saving appliance combines style and functionality, allowing you to enjoy rich and flavorful coffee in the comfort of your home.",
     price: 8899,
     image: "/BOSHOP images/item-img-1-7.jpg",
     multipleimages: [
@@ -175,15 +171,15 @@ export const PRODUCTS = [
     rating: 2,
     review: [
       {
-        text: "review-2",
+        text: "Top-notch Camera Drone – capturing stunning aerial shots effortlessly.",
         rating: "9",
       },
       {
-        text: "review-2",
+        text: "The Wireless Noise-Canceling Headphones deliver premium sound quality.",
         rating: "2",
       },
     ],
-    description: "some short dis",
+    description: "Elevate your gaming experience with our High-Speed Gaming Mouse. Precision tracking, customizable buttons, and ergonomic design provide the competitive edge you need. Dominate the virtual battlefield with style and performance.",
     price: 44999,
     image: "/BOSHOP images/item-img-1-8.jpg",
     multipleimages: [
@@ -199,15 +195,15 @@ export const PRODUCTS = [
     rating: 2,
     review: [
       {
-        text: "review-2",
+        text: "The Wireless Noise-Canceling Headphones deliver premium sound quality.",
         rating: "3",
       },
       {
-        text: "review-2",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "4",
       },
     ],
-    description: "some short dis",
+    description: "Start your day with the perfect cup of espresso using our Compact Espresso Maker. This space-saving appliance combines style and functionality, allowing you to enjoy rich and flavorful coffee in the comfort of your home.",
     price: 33999,
     image: "/BOSHOP images/item-img-1-9.jpg",
     multipleimages: [
@@ -223,15 +219,15 @@ export const PRODUCTS = [
     rating: 4,
     review: [
       {
-        text: "review-2",
+        text: "Compact Espresso Maker – my morning ritual just got better!",
         rating: "6",
       },
       {
-        text: "review-2",
+        text: "Stylish Smart Thermostat – makes home climate control a breeze!",
         rating: "5",
       },
     ],
-    description: "some short dis",
+    description: "Immerse yourself in premium sound quality with our Wireless Noise-Canceling Headphones. Enjoy crystal-clear audio, comfortable design, and the freedom of wireless connectivity for an unparalleled listening experience.",
     price: 1999,
     image: "/BOSHOP images/item-img-1-10.jpg",
     multipleimages: [
@@ -247,18 +243,16 @@ export const PRODUCTS = [
     rating: 8,
     review: [
       {
-        text: "review-2",
+        text: "Robotic Vacuum Cleaner – a lifesaver for keeping my home spotless",
         rating: "6",
       },
       {
-        text: "review-2",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "5",
       },
     ],
-    description: "some short dis",
+    description: "Elevate your gaming experience with our High-Speed Gaming Mouse. Precision tracking, customizable buttons, and ergonomic design provide the competitive edge you need. Dominate the virtual battlefield with style and performance.",
     price: 1999,
-    //image: "/BOSHOP images/item-img-1-21-1.jpg",
-    //image: "/BOSHOP images/img-trial.webp",
     image: "/BOSHOP images/item-img-1-3.jpg",
     multipleimages: [
       "/BOSHOP images/item-img-1-3-1.jpg",
@@ -273,28 +267,28 @@ export const PRODUCTS = [
     rating: 9,
     review: [
       {
-        text: "review-2",
+        text: "Stylish Smart Thermostat – makes home climate control a breeze!",
         rating: "6",
       },
       {
-        text: "review-2",
+        text: "Compact Espresso Maker – my morning ritual just got better!",
         rating: "5",
       },
     ],
-    description: "some short dis",
+    description: "Stay fit and connected with our Smart Fitness Tracker. Monitor your daily activities, heart rate, and sleep patterns. The sleek design and intuitive app make it easy to achieve your fitness goals",
     price: 1999,
     rating: 10,
     review: [
       {
-        text: "dfsdfdsff",
+        text: "The Wireless Noise-Canceling Headphones deliver premium sound quality.",
         rating: "7",
       },
       {
-        text: "review-2",
+        text: "The Wireless Noise-Canceling Headphones deliver premium sound quality.",
         rating: "3",
       },
     ],
-    //image: "/BOSHOP images/item-img-1-20-1.png",
+  
     image: "/BOSHOP images/item-img-1-5.jpg",
     multipleimages: [
       "/BOSHOP images/item-img-1-5-1.jpg",
@@ -305,14 +299,6 @@ export const PRODUCTS = [
   },
 ];
 
-// every data should be in this file like slider data
-// export const slider = [
-//   {
-//     img: "",
-//     text: "",
-//   },
-// ];
-
 export const bestSelling = [
   {
     id: "bs-1",
@@ -320,22 +306,22 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "Stylish Smart Thermostat – makes home climate control a breeze!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Elevate your gaming experience with our High-Speed Gaming Mouse. Precision tracking, customizable buttons, and ergonomic design provide the competitive edge you need. Dominate the virtual battlefield with style and performance.",
     price: 1299,
     image: "/BOSHOP images/item-img-1-5-1.jpg",
     multipleimages: [
-      "/BOSHOP images/item-img-1-5-1.jpg",
+      "/BOSHOP images/headphone.jpg",
       "/images/box7_image.jpg",
       "/images/box4_image.jpg",
-      "/BOSHOP images/item-img-1-5.jpg",
+      "/BOSHOP images/history-img.jpg",
     ],
   },
   {
@@ -344,20 +330,20 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "The Wireless Noise-Canceling Headphones deliver premium sound quality.",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Immerse yourself in premium sound quality with our Wireless Noise-Canceling Headphones. Enjoy crystal-clear audio, comfortable design, and the freedom of wireless connectivity for an unparalleled listening experience.",
     price: 1299,
-    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    image: "/BOSHOP images/item-img-1-3.jpg",
     multipleimages: [
-      "/BOSHOP images/best-seller-1.jpg",
-      "/images/box7_image.jpg",
+      "/BOSHOP images/item-img-1-7.jpg",
+      "/images/box4_image.jpg",
       "/images/box4_image.jpg",
       "/BOSHOP images/item-img-1-5.jpg",
     ],
@@ -369,17 +355,17 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "Compact Espresso Maker – my morning ritual just got better!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Immerse yourself in premium sound quality with our Wireless Noise-Canceling Headphones. Enjoy crystal-clear audio, comfortable design, and the freedom of wireless connectivity for an unparalleled listening experience.",
     price: 1299,
-    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    image: "/BOSHOP images/item-img-1-10.jpg",
     multipleimages: [
       "/BOSHOP images/item-img-1-5-1.jpg",
       "/images/box7_image.jpg",
@@ -393,17 +379,17 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "Robotic Vacuum Cleaner – a lifesaver for keeping my home spotless",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Stay fit and connected with our Smart Fitness Tracker. Monitor your daily activities, heart rate, and sleep patterns. The sleek design and intuitive app make it easy to achieve your fitness goals",
     price: 1299,
-    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    image: "/BOSHOP images/item-img-1-7.jpg",
     multipleimages: [
       "/BOSHOP images/item-img-1-5-1.jpg",
       "/images/box7_image.jpg",
@@ -417,15 +403,15 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "Robotic Vacuum Cleaner – a lifesaver for keeping my home spotless",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Elevate your gaming experience with our High-Speed Gaming Mouse. Precision tracking, customizable buttons, and ergonomic design provide the competitive edge you need. Dominate the virtual battlefield with style and performance.",
     price: 1299,
     image: "/BOSHOP images/item-img-1-5-1.jpg",
     multipleimages: [
@@ -441,15 +427,15 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "The Wireless Noise-Canceling Headphones deliver premium sound quality.",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Stay fit and connected with our Smart Fitness Tracker. Monitor your daily activities, heart rate, and sleep patterns. The sleek design and intuitive app make it easy to achieve your fitness goals",
     price: 1299,
     image: "/BOSHOP images/item-img-1-5-1.jpg",
     multipleimages: [
@@ -465,17 +451,17 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "Compact Espresso Maker – my morning ritual just got better!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Immerse yourself in premium sound quality with our Wireless Noise-Canceling Headphones. Enjoy crystal-clear audio, comfortable design, and the freedom of wireless connectivity for an unparalleled listening experience.",
     price: 1299,
-    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    image: "/BOSHOP images/item-img-1-9-1.jpg",
     multipleimages: [
       "/BOSHOP images/item-img-1-5-1.jpg",
       "/images/box7_image.jpg",
@@ -489,15 +475,15 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "Compact Espresso Maker – my morning ritual just got better!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "The Wireless Noise-Canceling Headphones deliver premium sound quality.",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Start your day with the perfect cup of espresso using our Compact Espresso Maker. This space-saving appliance combines style and functionality, allowing you to enjoy rich and flavorful coffee in the comfort of your home.",
     price: 1299,
     image: "/BOSHOP images/item-img-1-5-1.jpg",
     multipleimages: [
@@ -513,15 +499,15 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "I absolutely love my Smart Fitness Tracker! It's like having a personal fitness coach on my wrist. The sleek design makes it easy to wear all day, and the app is user-friendly. It keeps me motivated to reach my fitness goals. Highly recommend for anyone looking to stay active and healthy!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "These headphones are a game-changer! The noise-canceling feature is incredible — it's like stepping into a quiet oasis, even in a busy environment. The sound quality is top-notch, and the wireless connectivity is seamless. Comfortable to wear for long periods. Definitely worth the investment for music lovers!",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Elevate your gaming experience with our High-Speed Gaming Mouse. Precision tracking, customizable buttons, and ergonomic design provide the competitive edge you need. Dominate the virtual battlefield with style and performance.",
     price: 1299,
     image: "/BOSHOP images/item-img-1-5-1.jpg",
     multipleimages: [
@@ -537,17 +523,17 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "Robotic Vacuum Cleaner – a lifesaver for keeping my home spotless",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "This Smart Fitness Tracker is a game-changer for my workouts!",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Bring the party wherever you go with our Portable Bluetooth Speaker. Enjoy powerful, crisp sound in a compact and stylish design. The long-lasting battery and wireless connectivity make it the perfect companion for outdoor adventures and gatherings.",
     price: 1299,
-    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    image: "/BOSHOP images/item-img-1-1.jpg",
     multipleimages: [
       "/BOSHOP images/item-img-1-5-1.jpg",
       "/images/box7_image.jpg",
@@ -561,17 +547,17 @@ export const bestSelling = [
     rating: 5,
     review: [
       {
-        text: "Best review",
+        text: "Compact Espresso Maker – my morning ritual just got better!",
         rating: "9",
       },
       {
-        text: "Another review",
+        text: "Robotic Vacuum Cleaner – a lifesaver for keeping my home spotless",
         rating: "10",
       },
     ],
-    description: "Some short description",
+    description: "Elevate your gaming experience with our High-Speed Gaming Mouse. Precision tracking, customizable buttons, and ergonomic design provide the competitive edge you need. Dominate the virtual battlefield with style and performance.",
     price: 1299,
-    image: "/BOSHOP images/item-img-1-5-1.jpg",
+    image: "/BOSHOP images/item-img-1-3.jpg",
     multipleimages: [
       "/BOSHOP images/item-img-1-5-1.jpg",
       "/images/box7_image.jpg",

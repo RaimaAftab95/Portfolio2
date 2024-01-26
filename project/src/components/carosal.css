@@ -37,21 +37,18 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  /* .simple-head {
+ .simple-head {
     position: relative;
     min-height: 800px;
-    background: #f1eff4 url(/BOSHOP images/slide-bg-1.png) bottom right no-repeat;
-} */
+    /* background: #f1eff4 url(/BOSHOP images/slide-bg-1.png) bottom right no-repeat; */
+}
 @media (max-width: 1600px) {
     .simple-head .extra-huge-text {
       font-size: 20px;
-      /* 100 */
-      /* line-height: 80px; */
     }
   }
   
   .simple-head .extra-huge-text {
-    /* 142 */
     font-size:100px;
     /* line-height: 50px; */
     font-weight: bold;
@@ -59,43 +56,68 @@
     letter-spacing: -2px;
     position: relative;
   }
-  .btn {
-    border: none;
-    color: #fff;
-    display: inline-block;
-    padding: 15px 40px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 14px;
-    border-radius: 0px;
-    font-family: 'Poppins', sans-serif;
-    background: #2d3a4b;
-    position: relative;
-    z-index: 1;
-}
-.btn-inverse {
-    background: #ffe115!important;
-    color: #2d3a4b!important;
-}
- .margin-top-40 {
+
+ /* .margin-top-40 {
     margin-top:10px!important;
-}
-/* change */
-.simple-head .extra-huge-text {
-    font-size: 100px;
-    line-height: 80px;
+} */
+
+ .extra-huge-text {
+    font-size: 50px!important;
+    line-height: 80px!important;
+    font-weight: bold;
+    color: #2d3a4b;
 }
 
-@media (max-width: 1600px) {
+ @media (max-width: 1600px) {
     .simple-head .extra-huge-text {
         font-size: 20px;
-        line-height: 24px; /* Adjust line height as needed */
+        line-height: 24px; 
     }
+} 
+
+/* Media query for screens up to 1200px */
+@media (max-width: 1200px) {
+.extra-huge-text {
+      font-size: 18px!important;
+      line-height: 22px!important; 
+  }
 }
-/* @media (max-width: 767px){
-.simple-head {
-    background: #f1eff4;
-    min-height: initial;
-    padding: 100px 0;
+
+@media (max-width: 992px) {
+.extra-huge-text {
+      font-size: 16px!important;
+      line-height: 20px!important;
+  }
 }
-} */
+
+@media (max-width: 768px) {
+   .extra-huge-text {
+      font-size: 20px!important;
+      line-height: 18px!important;
+  }
+}
+
+.add-to-cart-btn{
+  padding: 10px 20px!important;
+  margin-top: 30px!important;
+  background-color:  #ffe115!important;
+  color:#2d3a4b!important;
+  border-radius: 0px!important;
+  cursor: pointer!important;
+  border: none!important;
+  transition: all 0.3s ease-in!important;
+  font-family: Poppins!important;
+  width: 100%;
+}
+.add-to-cart-btn:hover {
+  background-color:#2d3a4b!important;
+  color: #ffe115!important;  
+}
+.price{
+  font-size: 20px!important;
+  color:red;
+  margin-bottom: 10px;
+}
+.btn-shopnow{
+  margin-bottom: 80px!important;
+}

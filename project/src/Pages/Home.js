@@ -215,9 +215,9 @@ export default function Home() {
                   <h5 className="mt-5">Elegant Looks</h5>
                 </li>
               </ul>
-              <a href="#." class="btn btn-inverse">
+              <Button className="add-to-cart-btn mb-5">
                 Order Now
-              </a>
+              </Button>
             </div>
           </Col>
           <Col sm={12} xs={12} md={6} lg={6}>

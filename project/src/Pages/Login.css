@@ -3,3 +3,23 @@
     margin-top: 100px;
     padding-top: 20px;
 }
+.login-heading{
+    color: #2d3a4b;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center!important; 
+}
+.checkout-btn{
+    color:white!important;
+    background-color: #2d3a4b!important;
+    border-radius: 0 !important;
+}
+
+.checkout-btn:hover{
+    color:#2d3a4b!important;
+    background-color:#ffe115!important;
+    border-radius: 0!important;
+}
+.input-box{
+    box-shadow: 0 0 10px 0 #ffe115;
+}

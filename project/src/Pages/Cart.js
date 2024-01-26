@@ -218,7 +218,7 @@ export default function Cart() {
           </Row>
         </>
       ) : (
-        <p className="text-center bold">Please login to view the Cart</p>
+        <p className="text-center bold mt-5">Please login to view the Cart</p>
       )}
     </Container>
   );

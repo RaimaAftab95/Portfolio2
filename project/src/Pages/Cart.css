@@ -13,9 +13,7 @@
     width: 50%;
     object-fit:cover;
 }
-/* .Spinner{
-    margin: auto!important;
-} */
+
 .my-spinner {
     margin: auto!important;
     text-align: center!important;
@@ -28,7 +26,6 @@ object-fit:cover
   .summary-box{
 
     border: 3px solid #2d3a4b;
-    /* padding: 15px 30px!important; */
     background: #fff;
 
     height: auto;

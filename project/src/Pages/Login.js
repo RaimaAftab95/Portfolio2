@@ -30,7 +30,7 @@ export function Login({ name = "n/a", place, dob }) {
   };
   return (
     <div className="Login">
-      <h1>Login Form</h1>
+      <h1 className="login-heading">Login Form</h1>
       <Container className="mt-5">
         <Row className="justify-content-center">
           <Col xs={12} md={8} lg={6}>
@@ -39,7 +39,7 @@ export function Login({ name = "n/a", place, dob }) {
                 <Label for="contact-form-name">Username</Label>
                 <Input
                   type="text"
-                  className="contact-inputfields"
+                  className="contact-inputfields input-box"
                   required
                   minLength="8"
                   id="username"
@@ -53,7 +53,7 @@ export function Login({ name = "n/a", place, dob }) {
                 <Input
                   type="email"
                   id="contact-form-email"
-                  className="contact-inputfields"
+                  className="contact-inputfields input-box"
                   placeholder="Email:"
                   required
                   minLength="12"
@@ -64,7 +64,7 @@ export function Login({ name = "n/a", place, dob }) {
                 <Input
                   type="password"
                   id="contact-form-password"
-                  className="contact-inputfields"
+                  className="contact-inputfields input-box"
                   placeholder="Password"
                   required
                   minLength="6"
@@ -74,17 +74,10 @@ export function Login({ name = "n/a", place, dob }) {
                 onClick={handlelogin}
                 id="contact-formbtn"
                 type="submit"
-                className="btn contact-send-message"
+                className="contact-send-message checkout-btn"
               >
                 Login
               </Button>
-              {/*only dispatch if user name is true */}
-
-              {/* <Button onClick={() => dispatch(setActiveUser({ username, navigate }))} id="contact-formbtn" type="submit" className="btn contact-send-message" >Login</Button> */}
-
-              {/* <Button onClick={() => dispatch(setActiveUser({ username, navigate }))}>
-          Login old
-        </Button> */}
             </Form>
           </Col>
         </Row>
