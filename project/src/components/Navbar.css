@@ -32,8 +32,10 @@
     }
     .nav_link{
       padding-top: 35px!important;
-      /* margin-top: 50px!important; */
-      /* margin-right: 10px; */
+    }
+
+    .nav_link::after{
+      display: none;
     }
   }
   .hamburger-react div {

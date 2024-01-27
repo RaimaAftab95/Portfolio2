@@ -9,8 +9,6 @@
   }
   .carousel-text {
     position: absolute;
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
     width: 100%;
   }
   .simple-head {
@@ -18,11 +16,10 @@
     min-height: 800px;
 }
   .text-left1 {
-    left: 20px!important; /* Adjust left positioning as needed */
+    left: 20px!important;
   }
   .text-left {
-    left: 20px; /* Adjust left positioning as needed */
-     /* top: 50%;  */
+    left: 20px; 
      top:10%;
     transform: translateY(-50%);
     position: absolute;
@@ -30,7 +27,7 @@
   
   .text-right {
     right: 20px!important;
-    top: 50%; /* Adjust right positioning as needed */
+    top: 50%; 
   }
   
   .text-center {
@@ -40,7 +37,6 @@
  .simple-head {
     position: relative;
     min-height: 800px;
-    /* background: #f1eff4 url(/BOSHOP images/slide-bg-1.png) bottom right no-repeat; */
 }
 @media (max-width: 1600px) {
     .simple-head .extra-huge-text {
@@ -50,7 +46,6 @@
   
   .simple-head .extra-huge-text {
     font-size:100px;
-    /* line-height: 50px; */
     font-weight: bold;
     color: #2d3a4b;
     letter-spacing: -2px;

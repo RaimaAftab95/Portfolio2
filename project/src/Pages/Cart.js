@@ -44,9 +44,6 @@ export default function Cart() {
       const quantity = item.quantity ?? 1;
       totalPrice += item.price * quantity;
       totalQuantity += quantity;
-      console.log("quantity", quantity);
-      console.log("tp",totalPrice);
-      console.log("tq",totalQuantity);
     });
     return { totalPrice, totalQuantity };
   };
@@ -58,13 +55,11 @@ export default function Cart() {
   return (
     <Container fluid className="Cart">
       <Modal isOpen={modalOpen} toggle={() => setModalOpen(false)}>
-        {/* ... (your existing modal code) */}
         <ModalHeader toggle={() => setModalOpen(false)}>
           <div className="">CHECK OUT FORM</div>
         </ModalHeader>
         <ModalBody>
           <Row>
-            {/* Billing and Shipping Information Form */}
             <Col md={6}>
               <h5>Billing and Shipping Information</h5>
               <Form className="mt-5">
@@ -98,8 +93,6 @@ export default function Cart() {
                 </FormGroup>
               </Form>
             </Col>
-
-            {/* Order Information Card */}
             <Col md={6}>
               <h5>Order Information</h5>
               {cart.map((item) => (
@@ -190,8 +183,6 @@ export default function Cart() {
             </tbody>
           
           </Table>
-
-          {/* Summary Section */}
           <Row className="mt-4">
             <Col md={6} className="summary-box">
               <h5>Order Summary</h5>
@@ -218,7 +209,7 @@ export default function Cart() {
           </Row>
         </>
       ) : (
-        <p className="text-center bold mt-5">Please login to view the Cart</p>
+        <p className="center-text margin-top-40">Please login to view the Cart</p>
       )}
     </Container>
   );

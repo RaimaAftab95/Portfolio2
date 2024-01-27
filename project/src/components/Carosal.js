@@ -11,7 +11,6 @@ import "./carosal.css";
 
 const items = [
   {
-    //src: "/BOSHOP images/sliderimg3-purple.jpg",
     src: "/BOSHOP images/headphone.jpg",
     key: 1,
     text: "This is the text for Slide 1",

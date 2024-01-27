@@ -11,7 +11,6 @@ import "./carosal.css";
 
 const items = [
   {
-    //src: "/BOSHOP images/sliderimg3-purple.jpg",
     src: "/BOSHOP images/headphone.jpg",
     altText: "Slide 1",
     caption: "Slide 1",
@@ -26,8 +25,6 @@ const items = [
     text: "This is the text for Slide 2",
   },
   {
-    // src: "/BOSHOP images/hero_image.jpg",
-     //src: "/BOSHOP images/slide2.jpg",
      src: "/BOSHOP images/shoe slider.jpg",
     altText: "Slide 3",
     caption: "Slide 3",
@@ -72,7 +69,6 @@ function Carosal(args) {
           imagePositionClass = "";
           break;
         case 3:
-        //   textPositionClass = "text-center";
         textPositionClass = "text-right";
           imagePositionClass = "";
           break;
