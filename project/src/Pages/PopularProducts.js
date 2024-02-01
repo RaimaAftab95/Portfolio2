@@ -11,10 +11,39 @@ import {
   CardText,
 } from "reactstrap";
 
+const arrowStyle = {
+  background: "#ffe115",  
+  color: "#2d3a4b",      
+};
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+    className={`${className} custom-arrow-style`}
+     style={{ ...style, ...arrowStyle }}
+    onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+    className={`${className} custom-arrow-style`}
+    style={{  ...style,...arrowStyle }}
+    onClick={onClick}
+    />
+  );
+}
 export default class MultipleItems extends Component {
   render() {
     var settings = {
       dots: true,
+      // dotsClass: 'custom-dots',
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />, 
       infinite: true,
       speed: 500,
       slidesToShow: 4,
@@ -51,14 +80,17 @@ export default class MultipleItems extends Component {
       <div>
         <Slider {...settings}>
           {PRODUCTS.map((product) => (
-            <Card className="card-border">
-              <CardImg top width="50%" src={product.image} alt={product.name} />
-              <CardBody>
-                <CardTitle>{product.name}</CardTitle>
+            <Card className="card-border custom-card">
+              <CardImg className="custom-card-img" top width="50%" src={product.image} alt={product.name} />
+              <CardBody className="custom-card-body">
+                {/* <CardTitle>{product.name}</CardTitle> */}
                 {/* <CardText>{product.description}</CardText> */}
-                <CardText>{`Price: $${product.price}`}</CardText>
+                {/* <CardText>{`Price: $${product.price}`}</CardText> */}
               </CardBody>
+              <CardTitle className="m-4">{product.name}</CardTitle>
+              <CardText  className="m-4">{`Price: $${product.price}`}</CardText>
             </Card>
+            
           ))}
         </Slider>
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate  } from "react-router-dom";
 import {
   Spinner,
   Form,
@@ -27,7 +27,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import "./Cart.css";
 import { addToCart } from "./redux/cart";
-import { v4 as uuidv4 } from "uuid"; // Import uuid to generate a unique order number
+import { v4 as uuidv4 } from "uuid"; //generate a unique order number
+
 
 export default function Cart() {
   const { id } = useParams();
@@ -36,6 +37,7 @@ export default function Cart() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [orderNumber, setOrderNumber] = useState("");
+  const navigate = useNavigate(); // Use useNavigate for navigat
  
   const getTotalnew = () => {
     let totalPrice = 0;
@@ -131,6 +133,8 @@ export default function Cart() {
               toast.success(
                 `Your order # ${randomOrderNumber} is in the process. Thanks for shopping`
               );
+              dispatch(emptyCart()); // Empty the cart
+              navigate("/"); // Redirect to the home page using useNavigate
             }}
              className="checkout-btn"
           >
